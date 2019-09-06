@@ -1,0 +1,2 @@
+# Seguridad
+Componente de seguridad
