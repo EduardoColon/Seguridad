@@ -1,0 +1,254 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using CapaLogica;
+using System.Data.Odbc;
+
+/*---------------------------Creador: Diego Gomez------------------------------*/
+namespace CapaDiseno
+{
+    public partial class frm_usuarios : Form
+    {
+        logica logica1;
+        bool boton_ingreso;
+        bool boton_eliminar;
+
+        public frm_usuarios(string idUsuario)
+        {
+            InitializeComponent();
+            logica1 = new logica(idUsuario);
+        }
+
+        public frm_usuarios()
+        {
+        }
+
+        private void Dgv_asignaciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        string buscar;
+
+
+        void limpiar()
+        {
+            txt_apellido.Text = "";
+            txt_buscar.Text = "";
+            txt_clave.Text = "";
+            txt_nombre.Text = "";
+            txt_id.Text = "";
+        }
+
+        private void Button1_Click_1(object sender, EventArgs e)
+        {
+
+
+            buscar = txt_buscar.Text.Trim();
+
+           /* if (boton_eliminar == true)
+            {
+
+                txt_clave.Enabled = false;
+                txt_id.Enabled = false;
+                txt_nombre.Enabled = false;
+                txt_apellido.Enabled = false;
+                Gpb_estado.Enabled = false;
+            }
+            else
+            {
+                txt_clave.Enabled = false;
+                txt_id.Enabled = false;
+                txt_nombre.Enabled = true;
+                txt_apellido.Enabled = true;
+                Gpb_estado.Enabled = false;
+            }*/
+
+
+            try
+            {
+                DataTable dtusuario = logica1.buscar(buscar);
+
+                if (dtusuario.ToString() == null)
+                {
+                    MessageBox.Show("No existe");
+
+                }
+                else
+                {
+                    foreach (DataRow dt in dtusuario.Rows)
+                    {
+
+                        txt_id.Text = (dt[0].ToString());
+                        txt_apellido.Text = (dt[1].ToString());
+                        txt_nombre.Text = (dt[2].ToString());
+                        txt_clave.Text = (dt[3].ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return;
+            }
+
+
+            
+            txt_clave.Enabled = true;
+            txt_id.Enabled = true;
+            txt_nombre.Enabled = true;
+            txt_apellido.Enabled = true;
+            Gpb_estado.Enabled = true;
+            txt_buscar.Enabled = true;
+            button1.Enabled = true;
+            button2.Enabled = true;
+            button3.Enabled = true;
+            boton_ingreso = true;
+        }
+
+        private void GroupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Frm_usuarios_Load(object sender, EventArgs e)
+        {
+            txt_buscar.Enabled = false;
+            button1.Enabled = false;
+            txt_apellido.Enabled = false;
+            txt_clave.Enabled = false;
+            txt_nombre.Enabled = false;
+            Gpb_estado.Enabled = false;
+            txt_apellido.Enabled = false;
+            txt_id.Enabled = false;
+        }
+
+
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            id = txt_id.Text;
+            nombre = txt_nombre.Text;
+            apellido = txt_apellido.Text;
+            clave = txt_clave.Text;
+
+            txt_clave.Enabled = false;
+            txt_id.Enabled = false;
+            txt_nombre.Enabled = false;
+            txt_apellido.Enabled = false;
+            Gpb_estado.Enabled = false;
+            txt_buscar.Enabled = true;
+            button3.Enabled = false;
+            button4.Enabled = false;
+            button1.Enabled = true;
+            boton_eliminar = true;
+
+            try
+            {
+                DataTable dtusuario = logica1.eliminar(id, nombre, apellido, clave);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return;
+            }
+            limpiar();
+
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+
+            txt_clave.Enabled = false;
+            txt_id.Enabled = false;
+            txt_nombre.Enabled = true;
+            txt_apellido.Enabled = true;
+            Gpb_estado.Enabled = false;
+            txt_buscar.Enabled = true;
+            button1.Enabled = true;
+            button2.Enabled = false;
+            button4.Enabled = false;
+            limpiar();
+        }
+        public string id, nombre, apellido, clave;
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            
+            txt_clave.Enabled = true;
+            txt_id.Enabled = true;
+            txt_nombre.Enabled = true;
+            txt_apellido.Enabled = true;
+            Gpb_estado.Enabled = true;
+            txt_buscar.Enabled = false;
+            button1.Enabled = false;
+            button2.Enabled = false;
+            button3.Enabled = false;
+            boton_ingreso = true;
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            id = txt_id.Text;
+            nombre = txt_nombre.Text;
+            apellido = txt_apellido.Text;
+            clave = txt_clave.Text;
+            int boton;
+
+            if (boton_ingreso == true)
+            {
+                boton = 1;
+            }
+            else
+            {
+                boton = 0;
+            }
+
+            try
+            {
+                DataTable dtusuario = logica1.usuarios(id, nombre, apellido, clave, boton);
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex);
+                return;
+            }
+
+            limpiar();
+            txt_clave.Enabled = true;
+            txt_id.Enabled = true;
+            txt_nombre.Enabled = true;
+            txt_apellido.Enabled = true;
+            Gpb_estado.Enabled = true;
+            txt_buscar.Enabled = true;
+            button1.Enabled = true;
+            button2.Enabled = true;
+            button3.Enabled = true;
+            boton_ingreso = true;
+        }
+
+        private void Btn_salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
+}
