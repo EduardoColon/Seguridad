@@ -32,8 +32,8 @@
             this.txt_id = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txt_apellido = new System.Windows.Forms.TextBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
+            this.txt_apellido = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.Gpb_estado = new System.Windows.Forms.GroupBox();
@@ -61,7 +61,7 @@
             // 
             this.txt_clave.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_clave.Location = new System.Drawing.Point(100, 87);
-            this.txt_clave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_clave.Margin = new System.Windows.Forms.Padding(4);
             this.txt_clave.Name = "txt_clave";
             this.txt_clave.PasswordChar = '*';
             this.txt_clave.Size = new System.Drawing.Size(281, 23);
@@ -71,7 +71,7 @@
             // 
             this.txt_id.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_id.Location = new System.Drawing.Point(100, 33);
-            this.txt_id.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_id.Margin = new System.Windows.Forms.Padding(4);
             this.txt_id.Name = "txt_id";
             this.txt_id.Size = new System.Drawing.Size(283, 23);
             this.txt_id.TabIndex = 226;
@@ -98,23 +98,23 @@
             this.label3.TabIndex = 193;
             this.label3.Text = " Contraseña";
             // 
-            // txt_apellido
-            // 
-            this.txt_apellido.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_apellido.Location = new System.Drawing.Point(93, 39);
-            this.txt_apellido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txt_apellido.Name = "txt_apellido";
-            this.txt_apellido.Size = new System.Drawing.Size(300, 23);
-            this.txt_apellido.TabIndex = 227;
-            // 
             // txt_nombre
             // 
             this.txt_nombre.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nombre.Location = new System.Drawing.Point(93, 87);
-            this.txt_nombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_nombre.Location = new System.Drawing.Point(93, 39);
+            this.txt_nombre.Margin = new System.Windows.Forms.Padding(4);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(300, 23);
-            this.txt_nombre.TabIndex = 226;
+            this.txt_nombre.TabIndex = 227;
+            // 
+            // txt_apellido
+            // 
+            this.txt_apellido.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_apellido.Location = new System.Drawing.Point(93, 87);
+            this.txt_apellido.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_apellido.Name = "txt_apellido";
+            this.txt_apellido.Size = new System.Drawing.Size(300, 23);
+            this.txt_apellido.TabIndex = 226;
             // 
             // label4
             // 
@@ -145,9 +145,9 @@
             this.Gpb_estado.Controls.Add(this.Rdb_activo);
             this.Gpb_estado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Gpb_estado.Location = new System.Drawing.Point(188, 349);
-            this.Gpb_estado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Gpb_estado.Margin = new System.Windows.Forms.Padding(4);
             this.Gpb_estado.Name = "Gpb_estado";
-            this.Gpb_estado.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Gpb_estado.Padding = new System.Windows.Forms.Padding(4);
             this.Gpb_estado.Size = new System.Drawing.Size(463, 83);
             this.Gpb_estado.TabIndex = 232;
             this.Gpb_estado.TabStop = false;
@@ -157,7 +157,7 @@
             // 
             this.Rdb_inactivo.AutoSize = true;
             this.Rdb_inactivo.Location = new System.Drawing.Point(305, 33);
-            this.Rdb_inactivo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Rdb_inactivo.Margin = new System.Windows.Forms.Padding(4);
             this.Rdb_inactivo.Name = "Rdb_inactivo";
             this.Rdb_inactivo.Size = new System.Drawing.Size(79, 21);
             this.Rdb_inactivo.TabIndex = 1;
@@ -169,7 +169,7 @@
             // 
             this.Rdb_activo.AutoSize = true;
             this.Rdb_activo.Location = new System.Drawing.Point(97, 33);
-            this.Rdb_activo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Rdb_activo.Margin = new System.Windows.Forms.Padding(4);
             this.Rdb_activo.Name = "Rdb_activo";
             this.Rdb_activo.Size = new System.Drawing.Size(68, 21);
             this.Rdb_activo.TabIndex = 0;
@@ -180,7 +180,7 @@
             // btn_guardar
             // 
             this.btn_guardar.Location = new System.Drawing.Point(297, 119);
-            this.btn_guardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_guardar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(79, 35);
             this.btn_guardar.TabIndex = 233;
@@ -191,7 +191,7 @@
             // btn_salir
             // 
             this.btn_salir.Location = new System.Drawing.Point(557, 119);
-            this.btn_salir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_salir.Margin = new System.Windows.Forms.Padding(4);
             this.btn_salir.Name = "btn_salir";
             this.btn_salir.Size = new System.Drawing.Size(79, 35);
             this.btn_salir.TabIndex = 234;
@@ -207,9 +207,9 @@
             this.groupBox1.Controls.Add(this.txt_id);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(13, 178);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(398, 149);
             this.groupBox1.TabIndex = 235;
             this.groupBox1.TabStop = false;
@@ -218,14 +218,14 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.txt_nombre);
             this.groupBox2.Controls.Add(this.txt_apellido);
+            this.groupBox2.Controls.Add(this.txt_nombre);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(419, 178);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(406, 149);
             this.groupBox2.TabIndex = 236;
             this.groupBox2.TabStop = false;
@@ -234,7 +234,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(457, 24);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(79, 35);
             this.button1.TabIndex = 237;
@@ -245,7 +245,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(470, 119);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(79, 35);
             this.button2.TabIndex = 238;
@@ -259,9 +259,9 @@
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Location = new System.Drawing.Point(149, 15);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(563, 79);
             this.groupBox3.TabIndex = 239;
             this.groupBox3.TabStop = false;
@@ -272,7 +272,7 @@
             // 
             this.txt_buscar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_buscar.Location = new System.Drawing.Point(152, 30);
-            this.txt_buscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_buscar.Margin = new System.Windows.Forms.Padding(4);
             this.txt_buscar.Name = "txt_buscar";
             this.txt_buscar.Size = new System.Drawing.Size(283, 23);
             this.txt_buscar.TabIndex = 240;
@@ -291,7 +291,7 @@
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(384, 119);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(79, 35);
             this.button3.TabIndex = 240;
@@ -302,7 +302,7 @@
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(210, 119);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(79, 35);
             this.button4.TabIndex = 241;
@@ -325,7 +325,7 @@
             this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.Gpb_estado);
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm_usuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenimiento de Usuarios";
@@ -347,8 +347,8 @@
         private System.Windows.Forms.TextBox txt_id;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txt_apellido;
         private System.Windows.Forms.TextBox txt_nombre;
+        private System.Windows.Forms.TextBox txt_apellido;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox Gpb_estado;

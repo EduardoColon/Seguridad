@@ -176,6 +176,41 @@ namespace CapaDatos
             }
         }
 
+        public OdbcDataAdapter validarIDAplicacion()
+        {
+            try
+            {
+                
+                 string sqlIDAplicacion = "SELECT MAX(PK_id_aplicacion)+1 FROM tbl_aplicacion";
+                 OdbcDataAdapter dataIDAplicacion = new OdbcDataAdapter(sqlIDAplicacion, cn.conectar());
+                 return dataIDAplicacion;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+
+        public OdbcDataAdapter ActualizarUsuario(string idUsuario, string nombreUsuario, string apellidoUsuario,string clave, string estado)
+        {
+            try
+            {
+                cn.conectar();
+                string sqlactualizarUsuario = "UPDATE tbl_usuario SET nombre_usuario = '" + nombreUsuario + "', apellido_usuarios = '" + apellidoUsuario + "', password_usuario = '"+clave+"', estado_usuario = '" + estado + "' WHERE PK_id_usuario ='" + idUsuario + "'";
+                OdbcDataAdapter dataTable = new OdbcDataAdapter(sqlactualizarUsuario, cn.conectar());
+                insertarBitacora(idUsuario, "Actualizo un usuario: " + idUsuario + " - " + nombreUsuario, "tbl_usuario");
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
 
         /*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -184,21 +219,12 @@ namespace CapaDatos
         public OdbcDataAdapter insertarusuario(string id, string nombre, string apellido, string clave, int boton)
         {
             cn.conectar();
-            if (boton == 1)
-            {
-                MessageBox.Show("Usuario Creado");
-                string sqlusuarios = "INSERT into tbl_usuario (PK_id_usuario,nombre_usuario,apellido_usuarios,password_usuario) " +
-               "VALUES ('" + id + "','" + nombre + "','" + apellido + "','" + clave + "')";
-                OdbcDataAdapter datausuarios = new OdbcDataAdapter(sqlusuarios, cn.conectar());
-                return datausuarios;
-            }
-            else
-            {
-                MessageBox.Show("Usuario Actualizado");
-                string sqlconsulta = "UPDATE tbl_usuario set PK_id_usuario='" + id + "',nombre_usuario='" + apellido + "',apellido_usuarios='" + nombre + "',password_usuario='" + clave + "',estado_usuario='1' where PK_id_usuario='" + id + "'";
-                OdbcDataAdapter dataconsulta = new OdbcDataAdapter(sqlconsulta, cn.conectar());
-                return dataconsulta;
-            }
+
+              string sqlusuarios = "INSERT into tbl_usuario (PK_id_usuario,nombre_usuario,apellido_usuarios,password_usuario,estado_usuario) " +
+              "VALUES ('" + id + "','" + nombre + "','" + apellido + "','" + clave + "', '1')";
+               OdbcDataAdapter datausuarios = new OdbcDataAdapter(sqlusuarios, cn.conectar());
+              return datausuarios;
+
 
         }
 
@@ -217,11 +243,21 @@ namespace CapaDatos
             if (boton == 1)
             {
                 MessageBox.Show("Aplicacion Creada");
+                string sCodigoModulo = "";
+                OdbcCommand sqlCodigoModulo = new OdbcCommand("SELECT PK_id_Modulo FROM tbl_modulo WHERE nombre_modulo = '" + modulo + "' ", cn.conectar());
+                OdbcDataReader almacena = sqlCodigoModulo.ExecuteReader();
+
+                while (almacena.Read() == true)
+                {
+                    sCodigoModulo = almacena.GetString(0);
+                }
+
                 string sqlusuarios = "insert into tbl_aplicacion (PK_id_aplicacion,PK_id_modulo,nombre_aplicacion,descripcion_aplicacion,estado_aplicacion) " +
-                    "values ('" + idaplicacion + "','" + modulo + "','" + aplicacion + "','" + descripcion + "','1')";
+                    "values ('" + idaplicacion + "','" + sCodigoModulo + "','" + aplicacion + "','" + descripcion + "','1')";
                 OdbcDataAdapter datausuarios = new OdbcDataAdapter(sqlusuarios, cn.conectar());
-                return datausuarios;
                 boton = 0;
+                return datausuarios;
+
             }
             else
             {
@@ -247,8 +283,7 @@ namespace CapaDatos
 
         public OdbcDataAdapter eliminaraplicacion(string idaplicacion, string modulo, string descripcion, string aplicacion)
         {
-
-            MessageBox.Show("Aplicacion ELiminado");
+            
             string sqleliminar = "update tbl_aplicacion set PK_id_aplicacion='" + idaplicacion + "',PK_id_modulo='" + modulo + "',nombre_aplicacion='" + aplicacion + "',descripcion_aplicacion='" + descripcion + "',estado_aplicacion='0' WHERE PK_id_aplicacion='" + idaplicacion + "'";
             OdbcDataAdapter dataeliminar = new OdbcDataAdapter(sqleliminar, cn.conectar());
             return dataeliminar;

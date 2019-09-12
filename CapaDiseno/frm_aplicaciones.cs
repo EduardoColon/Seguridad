@@ -91,9 +91,9 @@ namespace CapaDiseno
 
             try
             {
-                DataTable dtUsuario = logica1.consultaLogicaaplicaciones();
+                DataTable dtModulos = logica1.consultaLogicaModulos();
 
-                foreach (DataRow row in dtUsuario.Rows)
+                foreach (DataRow row in dtModulos.Rows)
                 {
                     Cbx_modulo.Items.Add(row[0].ToString());
                 }
@@ -130,6 +130,36 @@ namespace CapaDiseno
             button3.Enabled = false;
             boton_ingreso = true;
             btn_guardar.Enabled = true;
+            txt_idaplicacion.Enabled = false;
+            Gpb_estado.Enabled = false;
+            Rdb_activo.Checked = true;
+
+
+
+            try
+            {
+                DataTable dtValidarID = logica1.validarIDAplicacion();
+                foreach (DataRow row in dtValidarID.Rows)
+                {
+                    if(row[0].ToString() == "")
+                    {
+                        txt_idaplicacion.Text = "1";
+                    }
+                    else
+                    {
+                        txt_idaplicacion.Text = row[0].ToString();
+                    }
+                  
+                   
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex);
+                return;
+            }
+
             limpiar();
         }
     
@@ -149,10 +179,8 @@ namespace CapaDiseno
         void limpiar()
         {
             txt_buscar.Text = "";
-            txt_idaplicacion.Text = "";
             Cbx_modulo.Text = "";
             txt_descripcion.Text = "";
-            txt_idaplicacion.Text = "";
             txt_aplicacion.Text = "";
         }
 
@@ -169,6 +197,7 @@ namespace CapaDiseno
             Gpb_estado.Enabled = false;
             txt_aplicacion.Enabled = false;
             btn_guardar.Enabled = true;
+            txt_idaplicacion.Text = "";
             limpiar();
         }
 
@@ -199,6 +228,7 @@ namespace CapaDiseno
             try
             {
                 DataTable dtusuario = logica1.eliminaraplicaciones(idaplicacion, modulo, descripcion, aplicacion);
+                
             }
             catch (Exception ex)
             {
@@ -206,7 +236,10 @@ namespace CapaDiseno
                 Console.WriteLine(ex);
                 return;
             }
+            
+            txt_idaplicacion.Text = "";
             limpiar();
+            
         }
 
         private void Label4_Click(object sender, EventArgs e)
@@ -216,7 +249,7 @@ namespace CapaDiseno
 
         private void Btn_guardar_Click(object sender, EventArgs e)
         {
-           idaplicacion = txt_idaplicacion.Text;
+            idaplicacion = txt_idaplicacion.Text;
             modulo = Cbx_modulo.Text;
             descripcion = txt_descripcion.Text;
             aplicacion = txt_aplicacion.Text;
@@ -257,7 +290,7 @@ namespace CapaDiseno
             boton_eliminar = true;
             btn_guardar.Enabled = false;
             txt_buscar.Enabled = false;
-
+            txt_idaplicacion.Text = "";
             limpiar();
         }
     }

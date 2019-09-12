@@ -148,6 +148,40 @@ namespace CapaLogica
             }
         }
 
+        public DataTable validarIDAplicacion()
+        {
+            try
+            {
+                OdbcDataAdapter dtValidarIDAplicacion = sn.validarIDAplicacion();
+                DataTable tableValidacionIdAplicacion = new DataTable();
+                dtValidarIDAplicacion.Fill(tableValidacionIdAplicacion);
+                return tableValidacionIdAplicacion;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public DataTable ActualizarUsuario(string idUsuario, string nombreUsuario, string apellidoUsuario,string clave, string estado)
+        {
+            try
+            {
+                OdbcDataAdapter dtactualizarUsuario = sn.ActualizarUsuario(idUsuario, nombreUsuario, apellidoUsuario,clave, estado);
+                DataTable tableUsuariosActualizacion = new DataTable();
+                dtactualizarUsuario.Fill(tableUsuariosActualizacion);
+                return tableUsuariosActualizacion;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+
+
+        }
+
         /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
         /*---------------------------------------------------------------Creador: Diego Gomez-----------------------------------------------------------------------------*/
