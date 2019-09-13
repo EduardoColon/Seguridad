@@ -331,8 +331,43 @@ namespace CapaLogica
         /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
         //######################################### EDITADO POR: ALEJANDRO BARREDA MENDOZA ############################################
+        //+1 modulos
+
+        public DataTable validarIDModulos()
+        {
+            try
+            {
+                OdbcDataAdapter dtValidarIDModulo = sn.validarIDModulos();
+                DataTable tableValidacionIdModulo = new DataTable();
+                dtValidarIDModulo.Fill(tableValidacionIdModulo);
+                return tableValidacionIdModulo;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
 
         //--------mantenimiento perfiles
+
+        //+1
+        public DataTable validarIDperfiles()
+        {
+            try
+            {
+                OdbcDataAdapter dtValidarIDAplicacion = sn.validarIDperfiles();
+                DataTable tableValidacionIdAplicacion = new DataTable();
+                dtValidarIDAplicacion.Fill(tableValidacionIdAplicacion);
+                return tableValidacionIdAplicacion;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
 
 
         public DataTable ingresarperfiles(string codigo, string nombre, string descripcion, string estado)

@@ -96,6 +96,29 @@ namespace CapaDiseno
         private void Btn_ingresar_Click(object sender, EventArgs e)
         {
             txtcodigo.Enabled = true;
+
+            try
+            {
+                DataTable dtValidarID = logic.validarIDperfiles();
+                foreach (DataRow row in dtValidarID.Rows)
+                {
+                    if (row[0].ToString() == "")
+                    {
+                        txtcodigo.Text = "1";
+                    }
+                    else
+                    {
+                        txtcodigo.Text = row[0].ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex);
+                return;
+            }
+
             if (txtnombre.Text == "")
             {
                 MessageBox.Show("Falta Nombre de Perfil");
