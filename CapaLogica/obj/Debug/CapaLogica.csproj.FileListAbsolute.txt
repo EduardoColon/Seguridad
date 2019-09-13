@@ -16,3 +16,12 @@ D:\Octavo semestre\Analisis de sistemas II\ModuloSeguridad\Seguridad\Seguridad\C
 D:\Octavo semestre\Analisis de sistemas II\ModuloSeguridad\Seguridad\Seguridad\CapaLogica\obj\Debug\CapaLogica.csproj.CopyComplete
 D:\Octavo semestre\Analisis de sistemas II\ModuloSeguridad\Seguridad\Seguridad\CapaLogica\obj\Debug\CapaLogica.dll
 D:\Octavo semestre\Analisis de sistemas II\ModuloSeguridad\Seguridad\Seguridad\CapaLogica\obj\Debug\CapaLogica.pdb
+C:\Users\BM\Desktop\Seguridad\CapaLogica\bin\Debug\CapaLogica.dll
+C:\Users\BM\Desktop\Seguridad\CapaLogica\bin\Debug\CapaLogica.pdb
+C:\Users\BM\Desktop\Seguridad\CapaLogica\bin\Debug\CapaDatos.dll
+C:\Users\BM\Desktop\Seguridad\CapaLogica\bin\Debug\CapaDatos.pdb
+C:\Users\BM\Desktop\Seguridad\CapaLogica\obj\Debug\CapaLogica.csprojAssemblyReference.cache
+C:\Users\BM\Desktop\Seguridad\CapaLogica\obj\Debug\CapaLogica.csproj.CoreCompileInputs.cache
+C:\Users\BM\Desktop\Seguridad\CapaLogica\obj\Debug\CapaLogica.csproj.CopyComplete
+C:\Users\BM\Desktop\Seguridad\CapaLogica\obj\Debug\CapaLogica.dll
+C:\Users\BM\Desktop\Seguridad\CapaLogica\obj\Debug\CapaLogica.pdb

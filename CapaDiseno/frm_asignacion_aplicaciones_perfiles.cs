@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaLogica;
 
+
+//=========================================creado por Alejandro Barreda======================================
+
 namespace CapaDiseno
 {
     public partial class frm_asignacion_aplicaciones_perfiles : Form

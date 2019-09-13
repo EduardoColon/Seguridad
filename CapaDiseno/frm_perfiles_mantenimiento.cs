@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace CapaDiseno
 {
     public partial class frm_perfiles_mantenimiento : Form
@@ -95,6 +96,30 @@ namespace CapaDiseno
 
         private void Btn_ingresar_Click(object sender, EventArgs e)
         {
+
+            try
+            {
+                DataTable dtValidarID = logic.validarIDperfiles();
+                foreach (DataRow row in dtValidarID.Rows)
+                {
+                    if (row[0].ToString() == "")
+                    {
+                        txtcodigo.Text = "1";
+                    }
+                    else
+                    {
+                        txtcodigo.Text = row[0].ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex);
+                return;
+            }
+
+
             txtcodigo.Enabled = true;
             if (txtnombre.Text == "")
             {

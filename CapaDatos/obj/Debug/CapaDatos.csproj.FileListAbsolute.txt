@@ -10,3 +10,9 @@ D:\Octavo semestre\Analisis de sistemas II\ModuloSeguridad\Seguridad\Seguridad\C
 D:\Octavo semestre\Analisis de sistemas II\ModuloSeguridad\Seguridad\Seguridad\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
 D:\Octavo semestre\Analisis de sistemas II\ModuloSeguridad\Seguridad\Seguridad\CapaDatos\obj\Debug\CapaDatos.dll
 D:\Octavo semestre\Analisis de sistemas II\ModuloSeguridad\Seguridad\Seguridad\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Users\BM\Desktop\Seguridad\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Users\BM\Desktop\Seguridad\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Users\BM\Desktop\Seguridad\CapaDatos\obj\Debug\CapaDatos.csprojAssemblyReference.cache
+C:\Users\BM\Desktop\Seguridad\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+C:\Users\BM\Desktop\Seguridad\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Users\BM\Desktop\Seguridad\CapaDatos\obj\Debug\CapaDatos.pdb

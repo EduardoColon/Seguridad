@@ -297,7 +297,42 @@ namespace CapaDatos
         /*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 
-        //########################### EDICION: ALEJANDRO BARREDA MENDOZA #####################################################
+        //######################################################## EDICION: ALEJANDRO BARREDA MENDOZA #####################################################
+
+        public OdbcDataAdapter validarIDModulos()
+        {
+            try
+            {
+
+                string sqlIDmodulo = "SELECT MAX(PK_id_Modulo)+1 FROM tbl_modulo";
+                OdbcDataAdapter dataIDmodulo = new OdbcDataAdapter(sqlIDmodulo, cn.conectar());
+                return dataIDmodulo;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public OdbcDataAdapter validarIDperfiles()
+        {
+            try
+            {
+
+                string sqlIDperfil = "SELECT MAX(PK_id_perfil)+1 FROM tbl_perfil_detalle";
+                OdbcDataAdapter dataIDperfil = new OdbcDataAdapter(sqlIDperfil, cn.conectar());
+                return dataIDperfil;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
 
         public OdbcDataAdapter insertarPerfil(string codigo, string nombre, string descripcion, string estado)
         {
@@ -439,7 +474,7 @@ namespace CapaDatos
                 return null;
             }
             }
-        // ########### FIN EDICION POR ALEJANDRO BARREDA ##########################################
+        // ################################################# FIN EDICION POR ALEJANDRO BARREDA MENDOZA ##########################################
 
         //Eduardo Colon
 

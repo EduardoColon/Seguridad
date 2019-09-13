@@ -48,3 +48,28 @@ D:\Octavo semestre\Analisis de sistemas II\ModuloSeguridad\Seguridad\Seguridad\C
 D:\Octavo semestre\Analisis de sistemas II\ModuloSeguridad\Seguridad\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.dll
 D:\Octavo semestre\Analisis de sistemas II\ModuloSeguridad\Seguridad\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.pdb
 C:\Users\allan\Desktop\Octavo Semestre\Analisis De Sistemas II\Objetos Comunes\Modulo Seguridad\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.frm_mostrar_bitacora.resources
+C:\Users\BM\Desktop\Seguridad\CapaDiseno\bin\Debug\CapaDiseno.dll
+C:\Users\BM\Desktop\Seguridad\CapaDiseno\bin\Debug\CapaDiseno.pdb
+C:\Users\BM\Desktop\Seguridad\CapaDiseno\bin\Debug\CapaDatos.dll
+C:\Users\BM\Desktop\Seguridad\CapaDiseno\bin\Debug\CapaLogica.dll
+C:\Users\BM\Desktop\Seguridad\CapaDiseno\bin\Debug\CapaDatos.pdb
+C:\Users\BM\Desktop\Seguridad\CapaDiseno\bin\Debug\CapaLogica.pdb
+C:\Users\BM\Desktop\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.csprojAssemblyReference.cache
+C:\Users\BM\Desktop\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.frm_aplicaciones.resources
+C:\Users\BM\Desktop\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.frm_asignacion_aplicaciones.resources
+C:\Users\BM\Desktop\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.frm_asignacion_aplicaciones_perfiles.resources
+C:\Users\BM\Desktop\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.frm_asignacion_perfiles.resources
+C:\Users\BM\Desktop\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.frm_cambioclave.resources
+C:\Users\BM\Desktop\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.frm_login.resources
+C:\Users\BM\Desktop\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.frm_loginAlterno.resources
+C:\Users\BM\Desktop\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.frm_modulos.resources
+C:\Users\BM\Desktop\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.frm_mostrar_bitacora.resources
+C:\Users\BM\Desktop\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.frm_perfiles_mantenimiento.resources
+C:\Users\BM\Desktop\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.frm_usuarios.resources
+C:\Users\BM\Desktop\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.MDI_Seguridad.resources
+C:\Users\BM\Desktop\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.Properties.Resources.resources
+C:\Users\BM\Desktop\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.csproj.GenerateResource.cache
+C:\Users\BM\Desktop\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.csproj.CoreCompileInputs.cache
+C:\Users\BM\Desktop\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.csproj.CopyComplete
+C:\Users\BM\Desktop\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.dll
+C:\Users\BM\Desktop\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.pdb
