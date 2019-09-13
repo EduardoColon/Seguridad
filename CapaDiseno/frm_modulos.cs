@@ -23,6 +23,11 @@ namespace CapaDiseno
             btn_actualizar.Enabled = false;
             btn_cancel.Enabled = false;
             logic = new logica(idUsuario);
+            txtcodigo.Enabled = false;
+            txtnombre.Enabled = false;
+            txtdesc.Enabled = false;
+            btn_ingresar.Enabled = false;
+            gbestado.Enabled = false;
         }
 
         public frm_modulos()
@@ -44,9 +49,8 @@ namespace CapaDiseno
 
         private void Btn_ingresar_Click(object sender, EventArgs e)
         {
-            txtcodigo.Enabled = true;
-
-            txtcodigo.Enabled = true;
+            txtnombre.Enabled = false;
+            txtdesc.Enabled = false;
 
             try
             {
@@ -101,6 +105,10 @@ namespace CapaDiseno
                 logic.ingresarmodulos(txtcodigo.Text.ToString(), txtnombre.Text.ToString(), txtdesc.Text.ToString(), estado.ToString());
                 MessageBox.Show("Modulo Ingresado Correctamente");
                 limpiar();
+                gbbuscar.Enabled = true;
+                btn_nuevo.Enabled = true;
+                btn_ingresar.Enabled = false;
+                
             }
         }
 
@@ -111,7 +119,13 @@ namespace CapaDiseno
             btn_modif.Enabled = false;
             btn_actualizar.Enabled = false;
             btn_cancel.Enabled = false;
-            btn_ingresar.Enabled = true;
+            btn_ingresar.Enabled = false;
+            txtnombre.Enabled = false;
+            txtdesc.Enabled = false;
+            gbbuscar.Enabled = true;
+            btn_nuevo.Enabled = true;
+            gbestado.Enabled = false;
+
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -130,6 +144,8 @@ namespace CapaDiseno
             txtdesc.Enabled = true;
             rbhabilitado.Enabled = true;
             rbinhabilitado.Enabled = true;
+        btn_nuevo.Enabled = false;
+           
         }
 
         private void Btn_bsucarmodulo_Click(object sender, EventArgs e)
@@ -218,15 +234,55 @@ namespace CapaDiseno
                 btn_modif.Enabled = false;
                 btn_actualizar.Enabled = false;
                 btn_cancel.Enabled = false;
-                btn_ingresar.Enabled = true;
+                btn_ingresar.Enabled = false;
+                gbestado.Enabled = false;
+                btn_nuevo.Enabled = true;
+                txtcodigo.Enabled = false;
+                txtnombre.Enabled = false;
+                txtdesc.Enabled = false;
                 limpiar();
-
             }
         }
 
         private void Frm_modulos_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Btn_nuevo_Click(object sender, EventArgs e)
+        {
+            btn_nuevo.Enabled = false;
+            btn_actualizar.Enabled = false;
+            gbbuscar.Enabled = false;
+            btn_modif.Enabled = false;
+            rbhabilitado.Checked = true;
+            gbestado.Enabled = false;
+            txtnombre.Enabled = true;
+            txtdesc.Enabled = true;
+            btn_ingresar.Enabled = true;
+            btn_cancel.Enabled = true;
+
+            try
+            {
+                DataTable dtValidarID = logic.validarIDperfiles();
+                foreach (DataRow row in dtValidarID.Rows)
+                {
+                    if (row[0].ToString() == "")
+                    {
+                        txtcodigo.Text = "1";
+                    }
+                    else
+                    {
+                        txtcodigo.Text = row[0].ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex);
+                return;
+            }
         }
     }
 }

@@ -356,7 +356,7 @@ namespace CapaDatos
             try
             {
 
-                string sqlIDperfil = "SELECT MAX(PK_id_perfil)+1 FROM tbl_perfil_detalle";
+                string sqlIDperfil = "SELECT MAX(PK_id_perfil)+1 FROM tbl_perfil_encabezado";
                 OdbcDataAdapter dataIDperfil = new OdbcDataAdapter(sqlIDperfil, cn.conectar());
                 return dataIDperfil;
 

@@ -22,6 +22,12 @@ namespace CapaDiseno
             btn_actualizar.Enabled = false;
             btn_cancel.Enabled = false;
             logic = new logica(idUsuario);
+            txtcodigo.Enabled = false;
+            txtnombre.Enabled = false;
+            txtdesc.Enabled = false;
+            btn_ingresar.Enabled = false;
+            gbestado.Enabled = false;
+
         }
 
         public frm_perfiles_mantenimiento()
@@ -95,29 +101,10 @@ namespace CapaDiseno
 
         private void Btn_ingresar_Click(object sender, EventArgs e)
         {
-            txtcodigo.Enabled = true;
+            txtnombre.Enabled = false;
+            txtdesc.Enabled = false;
 
-            try
-            {
-                DataTable dtValidarID = logic.validarIDperfiles();
-                foreach (DataRow row in dtValidarID.Rows)
-                {
-                    if (row[0].ToString() == "")
-                    {
-                        txtcodigo.Text = "1";
-                    }
-                    else
-                    {
-                        txtcodigo.Text = row[0].ToString();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-
-                Console.WriteLine(ex);
-                return;
-            }
+          
 
             if (txtnombre.Text == "")
             {
@@ -148,12 +135,16 @@ namespace CapaDiseno
                 logic.ingresarperfiles(txtcodigo.Text.ToString(), txtnombre.Text.ToString(), txtdesc.Text.ToString(), estado.ToString());
                 MessageBox.Show("Perfil Ingresado Correctamente");
                 limpiar();
+                gbbuscar.Enabled = true;
+                btn_nuevo.Enabled = true;
+                btn_ingresar.Enabled = false;
             }
         }
 
         private void Btn_modif_Click(object sender, EventArgs e)
         {
             txtcodigo.Enabled = false;
+            btn_nuevo.Enabled = false;
             btn_cancel.Enabled = true;
             btn_actualizar.Enabled = true;
             btn_modif.Enabled = false;
@@ -169,7 +160,12 @@ namespace CapaDiseno
             btn_modif.Enabled = false;
             btn_actualizar.Enabled = false;
             btn_cancel.Enabled = false;
-            btn_ingresar.Enabled = true;
+            btn_ingresar.Enabled = false;
+            txtnombre.Enabled = false;
+            txtdesc.Enabled = false;
+            gbbuscar.Enabled = true;
+            btn_nuevo.Enabled = true;
+            gbestado.Enabled = false;
         }
 
         private void Btn_actualizar_Click(object sender, EventArgs e)
@@ -205,8 +201,12 @@ namespace CapaDiseno
                 btn_modif.Enabled = false;
                 btn_actualizar.Enabled = false;
                 btn_cancel.Enabled = false;
-                btn_ingresar.Enabled = true;
-                txtcodigo.Enabled=true;
+                btn_ingresar.Enabled = false;
+                btn_nuevo.Enabled = true;
+                txtcodigo.Enabled=false;
+                txtnombre.Enabled = false;
+                txtdesc.Enabled = false;
+                gbestado.Enabled = false;
                 limpiar();
 
             }
@@ -220,6 +220,42 @@ namespace CapaDiseno
         private void Frm_perfiles_mantenimiento_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            btn_nuevo.Enabled = false;
+            btn_actualizar.Enabled = false;
+            gbbuscar.Enabled = false;
+            btn_modif.Enabled = false;
+            rbhabilitado.Checked = true;
+            gbestado.Enabled = false;
+            txtnombre.Enabled = true;
+            txtdesc.Enabled = true;
+            btn_ingresar.Enabled = true;
+            btn_cancel.Enabled = true;
+
+            try
+            {
+                DataTable dtValidarID = logic.validarIDperfiles();
+                foreach (DataRow row in dtValidarID.Rows)
+                {
+                    if (row[0].ToString() == "")
+                    {
+                        txtcodigo.Text = "1";
+                    }
+                    else
+                    {
+                        txtcodigo.Text = row[0].ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex);
+                return;
+            }
         }
     }
 }
