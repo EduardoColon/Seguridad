@@ -274,6 +274,7 @@
             this.btn_ayuda.Text = "Ayuda";
             this.btn_ayuda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_ayuda.UseVisualStyleBackColor = true;
+            this.btn_ayuda.Click += new System.EventHandler(this.Btn_ayuda_Click);
             // 
             // frm_cambioclave
             // 

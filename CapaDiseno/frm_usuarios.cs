@@ -200,6 +200,11 @@ namespace CapaDiseno
         }
         public string id, nombre, apellido, clave;
 
+        private void Btn_ayuda_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "C:\\Ayuda_Seguridad\\" + "CreacionUsuario.chm", "Creacion_Usuario.html");
+        }
+
         private void Button4_Click(object sender, EventArgs e)
         {
             

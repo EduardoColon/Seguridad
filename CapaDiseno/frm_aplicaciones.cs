@@ -204,6 +204,11 @@ namespace CapaDiseno
 
         public string idaplicacion, modulo, descripcion, aplicacion;
 
+        private void Btn_ayuda_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "C:\\Ayuda_Seguridad\\" + "MantenimientoAplicaciones.chm", "Mantenimiento_Aplicaciones.html");
+        }
+
         private void Button2_Click(object sender, EventArgs e)
         {
             idaplicacion = txt_idaplicacion.Text;
