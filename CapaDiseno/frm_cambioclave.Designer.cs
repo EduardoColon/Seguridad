@@ -47,6 +47,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.btn_ayuda = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -262,11 +263,24 @@
             this.label6.TabIndex = 255;
             this.label6.Text = "CAMBIO DE CONTRASEÑA";
             // 
+            // btn_ayuda
+            // 
+            this.btn_ayuda.Image = global::CapaDiseno.Properties.Resources.icons8_ayuda_30;
+            this.btn_ayuda.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_ayuda.Location = new System.Drawing.Point(740, 10);
+            this.btn_ayuda.Name = "btn_ayuda";
+            this.btn_ayuda.Size = new System.Drawing.Size(86, 36);
+            this.btn_ayuda.TabIndex = 256;
+            this.btn_ayuda.Text = "Ayuda";
+            this.btn_ayuda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_ayuda.UseVisualStyleBackColor = true;
+            // 
             // frm_cambioclave
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(838, 514);
+            this.Controls.Add(this.btn_ayuda);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -310,5 +324,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btn_ayuda;
     }
 }

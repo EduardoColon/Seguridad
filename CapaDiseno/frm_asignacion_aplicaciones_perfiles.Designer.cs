@@ -47,6 +47,8 @@
             this.btn_agregar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btn_ayuda = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_asignacionesperfiles)).BeginInit();
             this.Gpb_datos.SuspendLayout();
             this.SuspendLayout();
@@ -249,11 +251,36 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Aplicaciones";
             // 
+            // btn_ayuda
+            // 
+            this.btn_ayuda.Image = global::CapaDiseno.Properties.Resources.icons8_ayuda_30;
+            this.btn_ayuda.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_ayuda.Location = new System.Drawing.Point(748, 12);
+            this.btn_ayuda.Name = "btn_ayuda";
+            this.btn_ayuda.Size = new System.Drawing.Size(86, 36);
+            this.btn_ayuda.TabIndex = 252;
+            this.btn_ayuda.Text = "Ayuda";
+            this.btn_ayuda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_ayuda.UseVisualStyleBackColor = true;
+            this.btn_ayuda.Click += new System.EventHandler(this.Btn_ayuda_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(192, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(444, 24);
+            this.label3.TabIndex = 253;
+            this.label3.Text = "ASIGNACION DE APLICACIONES A PERFILES";
+            // 
             // frm_asignacion_aplicaciones_perfiles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(838, 514);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btn_ayuda);
             this.Controls.Add(this.btn_finalizar);
             this.Controls.Add(this.btn_salir);
             this.Controls.Add(this.btn_remover);
@@ -263,12 +290,13 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm_asignacion_aplicaciones_perfiles";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_asignacion_aplicaciones_perfiles";
+            this.Text = "Asignacion de aplicaciones a perfiles";
             this.Load += new System.EventHandler(this.Frm_asignacion_aplicaciones_perfiles_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_asignacionesperfiles)).EndInit();
             this.Gpb_datos.ResumeLayout(false);
             this.Gpb_datos.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -293,5 +321,7 @@
         private System.Windows.Forms.Button btn_agregar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btn_ayuda;
+        private System.Windows.Forms.Label label3;
     }
 }

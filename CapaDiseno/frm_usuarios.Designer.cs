@@ -51,6 +51,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.btn_ayuda = new System.Windows.Forms.Button();
             this.Gpb_estado.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -310,11 +311,24 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
+            // btn_ayuda
+            // 
+            this.btn_ayuda.Image = global::CapaDiseno.Properties.Resources.icons8_ayuda_30;
+            this.btn_ayuda.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_ayuda.Location = new System.Drawing.Point(740, 12);
+            this.btn_ayuda.Name = "btn_ayuda";
+            this.btn_ayuda.Size = new System.Drawing.Size(86, 36);
+            this.btn_ayuda.TabIndex = 252;
+            this.btn_ayuda.Text = "Ayuda";
+            this.btn_ayuda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_ayuda.UseVisualStyleBackColor = true;
+            // 
             // frm_usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(838, 514);
+            this.Controls.Add(this.btn_ayuda);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox3);
@@ -366,5 +380,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btn_ayuda;
     }
 }

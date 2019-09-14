@@ -42,13 +42,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_nuevo = new System.Windows.Forms.Button();
             this.btn_actualizar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_salir = new System.Windows.Forms.Button();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.btn_ingresar = new System.Windows.Forms.Button();
             this.btn_modif = new System.Windows.Forms.Button();
-            this.btn_nuevo = new System.Windows.Forms.Button();
+            this.btn_ayuda = new System.Windows.Forms.Button();
             this.gbbuscar.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.gbestado.SuspendLayout();
@@ -59,7 +60,7 @@
             // 
             this.gbbuscar.Controls.Add(this.btn_bsucarperfil);
             this.gbbuscar.Controls.Add(this.tbx_buscarperfil);
-            this.gbbuscar.Location = new System.Drawing.Point(130, 13);
+            this.gbbuscar.Location = new System.Drawing.Point(87, 13);
             this.gbbuscar.Margin = new System.Windows.Forms.Padding(4);
             this.gbbuscar.Name = "gbbuscar";
             this.gbbuscar.Padding = new System.Windows.Forms.Padding(4);
@@ -215,6 +216,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Opciones";
             // 
+            // btn_nuevo
+            // 
+            this.btn_nuevo.Location = new System.Drawing.Point(21, 35);
+            this.btn_nuevo.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_nuevo.Name = "btn_nuevo";
+            this.btn_nuevo.Size = new System.Drawing.Size(100, 30);
+            this.btn_nuevo.TabIndex = 7;
+            this.btn_nuevo.Text = "Nuevo";
+            this.btn_nuevo.UseVisualStyleBackColor = true;
+            this.btn_nuevo.Click += new System.EventHandler(this.Button2_Click);
+            // 
             // btn_actualizar
             // 
             this.btn_actualizar.Location = new System.Drawing.Point(21, 137);
@@ -280,22 +292,24 @@
             this.btn_modif.UseVisualStyleBackColor = true;
             this.btn_modif.Click += new System.EventHandler(this.Btn_modif_Click);
             // 
-            // btn_nuevo
+            // btn_ayuda
             // 
-            this.btn_nuevo.Location = new System.Drawing.Point(21, 35);
-            this.btn_nuevo.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_nuevo.Name = "btn_nuevo";
-            this.btn_nuevo.Size = new System.Drawing.Size(100, 30);
-            this.btn_nuevo.TabIndex = 7;
-            this.btn_nuevo.Text = "Nuevo";
-            this.btn_nuevo.UseVisualStyleBackColor = true;
-            this.btn_nuevo.Click += new System.EventHandler(this.Button2_Click);
+            this.btn_ayuda.Image = global::CapaDiseno.Properties.Resources.icons8_ayuda_30;
+            this.btn_ayuda.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_ayuda.Location = new System.Drawing.Point(746, 13);
+            this.btn_ayuda.Name = "btn_ayuda";
+            this.btn_ayuda.Size = new System.Drawing.Size(86, 36);
+            this.btn_ayuda.TabIndex = 252;
+            this.btn_ayuda.Text = "Ayuda";
+            this.btn_ayuda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_ayuda.UseVisualStyleBackColor = true;
             // 
             // frm_perfiles_mantenimiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(838, 514);
+            this.Controls.Add(this.btn_ayuda);
             this.Controls.Add(this.gbbuscar);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -339,5 +353,6 @@
         private System.Windows.Forms.Button btn_ingresar;
         private System.Windows.Forms.Button btn_modif;
         private System.Windows.Forms.Button btn_nuevo;
+        private System.Windows.Forms.Button btn_ayuda;
     }
 }

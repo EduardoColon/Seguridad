@@ -48,6 +48,7 @@
             this.btn_salir = new System.Windows.Forms.Button();
             this.btn_finalizar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.btn_ayuda = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_asignaciones)).BeginInit();
             this.Gpb_datos.SuspendLayout();
             this.SuspendLayout();
@@ -255,17 +256,31 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(247, 9);
+            this.label3.Location = new System.Drawing.Point(178, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(335, 24);
+            this.label3.Size = new System.Drawing.Size(459, 24);
             this.label3.TabIndex = 15;
-            this.label3.Text = "ASIGNACION DE APLICACIONES";
+            this.label3.Text = "ASIGNACION DE APLICACIONES A USUARIOS";
+            // 
+            // btn_ayuda
+            // 
+            this.btn_ayuda.Image = global::CapaDiseno.Properties.Resources.icons8_ayuda_30;
+            this.btn_ayuda.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_ayuda.Location = new System.Drawing.Point(740, 9);
+            this.btn_ayuda.Name = "btn_ayuda";
+            this.btn_ayuda.Size = new System.Drawing.Size(86, 36);
+            this.btn_ayuda.TabIndex = 252;
+            this.btn_ayuda.Text = "Ayuda";
+            this.btn_ayuda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_ayuda.UseVisualStyleBackColor = true;
+            this.btn_ayuda.Click += new System.EventHandler(this.Btn_ayuda_Click);
             // 
             // frm_asignacion_aplicaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(838, 514);
+            this.Controls.Add(this.btn_ayuda);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btn_finalizar);
             this.Controls.Add(this.btn_salir);
@@ -307,5 +322,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Imprimir;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btn_ayuda;
     }
 }

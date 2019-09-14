@@ -45,6 +45,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbo_usuario = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btn_ayuda = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_perfiles_asignados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_asignacion_perfiles)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -237,11 +238,25 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "ASIGNACION DE PERFILES";
             // 
+            // btn_ayuda
+            // 
+            this.btn_ayuda.Image = global::CapaDiseno.Properties.Resources.icons8_ayuda_30;
+            this.btn_ayuda.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_ayuda.Location = new System.Drawing.Point(740, 6);
+            this.btn_ayuda.Name = "btn_ayuda";
+            this.btn_ayuda.Size = new System.Drawing.Size(86, 36);
+            this.btn_ayuda.TabIndex = 252;
+            this.btn_ayuda.Text = "Ayuda";
+            this.btn_ayuda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_ayuda.UseVisualStyleBackColor = true;
+            this.btn_ayuda.Click += new System.EventHandler(this.Btn_ayuda_Click);
+            // 
             // frm_asignacion_perfiles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(838, 514);
+            this.Controls.Add(this.btn_ayuda);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -282,5 +297,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombrePerfil;
+        private System.Windows.Forms.Button btn_ayuda;
     }
 }

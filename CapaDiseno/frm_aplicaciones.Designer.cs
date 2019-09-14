@@ -49,6 +49,7 @@
             this.Gpb_estado = new System.Windows.Forms.GroupBox();
             this.Rdb_inactivo = new System.Windows.Forms.RadioButton();
             this.Rdb_activo = new System.Windows.Forms.RadioButton();
+            this.btn_ayuda = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.Gpb_estado.SuspendLayout();
@@ -56,7 +57,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(690, 199);
+            this.button4.Location = new System.Drawing.Point(688, 210);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(79, 35);
@@ -67,7 +68,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(690, 253);
+            this.button3.Location = new System.Drawing.Point(688, 264);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(79, 35);
@@ -81,11 +82,11 @@
             this.groupBox3.Controls.Add(this.txt_buscar);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.button1);
-            this.groupBox3.Location = new System.Drawing.Point(60, 13);
+            this.groupBox3.Location = new System.Drawing.Point(58, 46);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(709, 107);
+            this.groupBox3.Size = new System.Drawing.Size(709, 87);
             this.groupBox3.TabIndex = 248;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Modificar";
@@ -93,7 +94,7 @@
             // txt_buscar
             // 
             this.txt_buscar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_buscar.Location = new System.Drawing.Point(208, 41);
+            this.txt_buscar.Location = new System.Drawing.Point(208, 35);
             this.txt_buscar.Margin = new System.Windows.Forms.Padding(4);
             this.txt_buscar.Name = "txt_buscar";
             this.txt_buscar.Size = new System.Drawing.Size(283, 23);
@@ -103,7 +104,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(69, 41);
+            this.label2.Location = new System.Drawing.Point(69, 35);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 17);
@@ -112,7 +113,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(524, 41);
+            this.button1.Location = new System.Drawing.Point(524, 35);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(79, 35);
@@ -123,7 +124,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(690, 296);
+            this.button2.Location = new System.Drawing.Point(688, 307);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(79, 35);
@@ -184,7 +185,7 @@
             this.groupBox1.Controls.Add(this.txt_idaplicacion);
             this.groupBox1.Controls.Add(this.txt_descripcion);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(60, 145);
+            this.groupBox1.Location = new System.Drawing.Point(58, 156);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -236,7 +237,7 @@
             // 
             // btn_salir
             // 
-            this.btn_salir.Location = new System.Drawing.Point(690, 349);
+            this.btn_salir.Location = new System.Drawing.Point(688, 360);
             this.btn_salir.Margin = new System.Windows.Forms.Padding(4);
             this.btn_salir.Name = "btn_salir";
             this.btn_salir.Size = new System.Drawing.Size(79, 35);
@@ -247,7 +248,7 @@
             // 
             // btn_guardar
             // 
-            this.btn_guardar.Location = new System.Drawing.Point(690, 144);
+            this.btn_guardar.Location = new System.Drawing.Point(688, 155);
             this.btn_guardar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(79, 35);
@@ -295,11 +296,24 @@
             this.Rdb_activo.Text = "Activo";
             this.Rdb_activo.UseVisualStyleBackColor = true;
             // 
+            // btn_ayuda
+            // 
+            this.btn_ayuda.Image = global::CapaDiseno.Properties.Resources.icons8_ayuda_30;
+            this.btn_ayuda.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_ayuda.Location = new System.Drawing.Point(681, 12);
+            this.btn_ayuda.Name = "btn_ayuda";
+            this.btn_ayuda.Size = new System.Drawing.Size(86, 36);
+            this.btn_ayuda.TabIndex = 251;
+            this.btn_ayuda.Text = "Ayuda";
+            this.btn_ayuda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_ayuda.UseVisualStyleBackColor = true;
+            // 
             // frm_aplicaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(838, 514);
+            this.Controls.Add(this.btn_ayuda);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox3);
@@ -347,5 +361,6 @@
         private System.Windows.Forms.RadioButton Rdb_inactivo;
         private System.Windows.Forms.RadioButton Rdb_activo;
         private System.Windows.Forms.ComboBox Cbx_modulo;
+        private System.Windows.Forms.Button btn_ayuda;
     }
 }

@@ -200,5 +200,10 @@ namespace CapaDiseno
             }
             
         }
+
+        private void Btn_ayuda_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "C:\\Ayuda_Seguridad\\" + "ayudaAsignacionPerfiles.chm", "Asignacion_Perfil_Usuarios.html");
+        }
     }
 }

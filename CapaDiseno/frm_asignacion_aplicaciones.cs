@@ -227,5 +227,10 @@ namespace CapaDiseno
             
             this.Close();
         }
+
+        private void Btn_ayuda_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "C:\\Ayuda_Seguridad\\" + "AyudaAsignacionAplicacionesUsuarios.chm", "Asignacion_Aplicaciones_Usuarios.html");
+        }
     }
 }

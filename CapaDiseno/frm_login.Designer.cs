@@ -36,6 +36,7 @@
             this.Btn_entrar = new System.Windows.Forms.Button();
             this.Lbl_usuario = new System.Windows.Forms.Label();
             this.Lbl_clave = new System.Windows.Forms.Label();
+            this.btn_ayuda = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -135,6 +136,19 @@
             this.Lbl_clave.TabIndex = 208;
             this.Lbl_clave.Text = "Clave:";
             // 
+            // btn_ayuda
+            // 
+            this.btn_ayuda.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ayuda.Image = global::CapaDiseno.Properties.Resources.icons8_ayuda_30;
+            this.btn_ayuda.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_ayuda.Location = new System.Drawing.Point(478, 12);
+            this.btn_ayuda.Name = "btn_ayuda";
+            this.btn_ayuda.Size = new System.Drawing.Size(86, 36);
+            this.btn_ayuda.TabIndex = 252;
+            this.btn_ayuda.Text = "Ayuda";
+            this.btn_ayuda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_ayuda.UseVisualStyleBackColor = true;
+            // 
             // frm_login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -142,6 +156,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(576, 286);
             this.ControlBox = false;
+            this.Controls.Add(this.btn_ayuda);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Btn_cancelar);
             this.Controls.Add(this.Cb_ver_password);
@@ -171,5 +186,6 @@
         private System.Windows.Forms.Label Lbl_usuario;
         private System.Windows.Forms.Label Lbl_clave;
         public System.Windows.Forms.TextBox Txt_usuario;
+        private System.Windows.Forms.Button btn_ayuda;
     }
 }

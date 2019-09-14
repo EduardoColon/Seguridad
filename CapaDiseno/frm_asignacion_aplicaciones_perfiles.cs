@@ -219,5 +219,10 @@ namespace CapaDiseno
                 MessageBox.Show("No hay relaciones que eliminar");
             }
         }
+
+        private void Btn_ayuda_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "C:\\Ayuda_Seguridad\\" + "AyudaAsignacionAplicacionesPerfiles.chm", "Asignacion_Aplicaciones_Perfiles.html");
+        }
     }
 }
