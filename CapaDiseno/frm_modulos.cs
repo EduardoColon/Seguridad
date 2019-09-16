@@ -52,29 +52,7 @@ namespace CapaDiseno
             txtnombre.Enabled = false;
             txtdesc.Enabled = false;
 
-            try
-            {
-                DataTable dtValidarID = logic.validarIDModulos();
-                foreach (DataRow row in dtValidarID.Rows)
-                {
-                    if (row[0].ToString() == "")
-                    {
-                        txtcodigo.Text = "1";
-                    }
-                    else
-                    {
-                        txtcodigo.Text = row[0].ToString();
-                    }
-
-
-                }
-            }
-            catch (Exception ex)
-            {
-
-                Console.WriteLine(ex);
-                return;
-            }
+           
 
             if (txtnombre.Text == "")
             {
@@ -145,7 +123,7 @@ namespace CapaDiseno
             rbhabilitado.Enabled = true;
             rbinhabilitado.Enabled = true;
         btn_nuevo.Enabled = false;
-           
+            gbestado.Enabled = true;
         }
 
         private void Btn_bsucarmodulo_Click(object sender, EventArgs e)
@@ -264,7 +242,7 @@ namespace CapaDiseno
 
             try
             {
-                DataTable dtValidarID = logic.validarIDperfiles();
+                DataTable dtValidarID = logic.validarIDModulos();
                 foreach (DataRow row in dtValidarID.Rows)
                 {
                     if (row[0].ToString() == "")
@@ -275,6 +253,8 @@ namespace CapaDiseno
                     {
                         txtcodigo.Text = row[0].ToString();
                     }
+
+
                 }
             }
             catch (Exception ex)
