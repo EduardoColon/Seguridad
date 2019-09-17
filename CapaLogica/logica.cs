@@ -218,6 +218,38 @@ namespace CapaLogica
             }
         }
 
+        public DataTable updateclave(string usuario)
+        {
+            try
+            {
+                OdbcDataAdapter dtusuario = sn.update(usuario);
+                DataTable tableusuarios = new DataTable();
+                dtusuario.Fill(tableusuarios);
+                return tableusuarios;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public DataTable updatecliente(string clave,string usuario)
+        {
+            try
+            {
+                OdbcDataAdapter dtusuario = sn.clienteupdate(clave,usuario);
+                DataTable tableusuarios = new DataTable();
+                dtusuario.Fill(tableusuarios);
+                return tableusuarios;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
 
         public DataTable aplicaciones(string idaplicacion, string modulo, string descripcion, string aplicacion, int boton)
         {
