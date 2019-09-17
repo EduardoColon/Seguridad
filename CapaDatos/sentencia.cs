@@ -199,7 +199,7 @@ namespace CapaDatos
             try
             {
                 cn.conectar();
-                string sqlactualizarUsuario = "UPDATE tbl_usuario SET nombre_usuario = '" + nombreUsuario + "', apellido_usuarios = '" + apellidoUsuario + "', password_usuario = '"+clave+"', estado_usuario = '" + estado + "' WHERE PK_id_usuario ='" + idUsuario + "'";
+                string sqlactualizarUsuario = "UPDATE tbl_usuario SET nombre_usuario = '" + nombreUsuario + "', apellido_usuarios = '" + apellidoUsuario + "', estado_usuario = '" + estado + "' WHERE PK_id_usuario ='" + idUsuario + "'";
                 OdbcDataAdapter dataTable = new OdbcDataAdapter(sqlactualizarUsuario, cn.conectar());
                 insertarBitacora(idUsuario, "Actualizo un usuario: " + idUsuario + " - " + nombreUsuario, "tbl_usuario");
                 return dataTable;
