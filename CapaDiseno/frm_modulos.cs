@@ -52,7 +52,7 @@ namespace CapaDiseno
             txtnombre.Enabled = false;
             txtdesc.Enabled = false;
 
-           
+          
 
             if (txtnombre.Text == "")
             {
@@ -263,6 +263,11 @@ namespace CapaDiseno
                 Console.WriteLine(ex);
                 return;
             }
+        }
+
+        private void Btn_ayuda_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "C:\\Ayuda_Seguridad\\" + "MantenimientoModulos.chm", "AyudaMantenimientoModulos.html");
         }
     }
 }

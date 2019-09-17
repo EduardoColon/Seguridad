@@ -152,6 +152,7 @@ namespace CapaDiseno
             txtdesc.Enabled = true;
             rbhabilitado.Enabled = true;
             rbinhabilitado.Enabled = true;
+            gbestado.Enabled = true;
         }
 
         private void Btn_cancel_Click(object sender, EventArgs e)
@@ -256,6 +257,11 @@ namespace CapaDiseno
                 Console.WriteLine(ex);
                 return;
             }
+        }
+
+        private void Btn_ayuda_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "C:\\Ayuda_Seguridad\\" + "MantenimientoPerfiles.chm", "AyudaMantenimientoPerfiles.html");
         }
     }
 }
