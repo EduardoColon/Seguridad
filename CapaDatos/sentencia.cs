@@ -420,7 +420,6 @@ namespace CapaDatos
 
         public OdbcDataAdapter ActualizarPerfil(string ID_perfil, string nombre, string descripcion, string estado)
         {
-            Console.WriteLine("ESTO SE INGRESA EN LA SENTENCIA: " + ID_perfil + ", " + nombre + ", " + descripcion + ", " + estado);
             try
             {
                 cn.conectar();
@@ -607,6 +606,184 @@ namespace CapaDatos
 
         }
 
+        public bool consultarPermisos(string idUsuario, string idAplicacion, int tipoPermiso)
+        {
+
+            try
+            {
+                switch (tipoPermiso)
+                {
+                    case 1:
+
+                        OdbcCommand sql = new OdbcCommand("Select ingresar from tbl_usuario_aplicacion WHERE PK_id_usuario= '" + idUsuario + "' AND PK_id_aplicacion ='" + idAplicacion + "'", cn.conectar());
+                        OdbcDataReader almacena = sql.ExecuteReader();
+
+                        if(almacena.Read() == true)
+                        {
+                            if (almacena.GetString(0) == "1")
+                            {
+                                almacena.Close();
+                                sql.Connection.Close();
+                                return true;
+                            }
+                        }
+
+                        sql = new OdbcCommand("Select tbl_perfil_detalle.ingresar from tbl_perfil_detalle " +
+                            "INNER JOIN tbl_usuario_perfil ON tbl_perfil_detalle.PK_id_perfil = tbl_usuario_perfil.PK_id_perfil" +
+                            " WHERE tbl_usuario_perfil.PK_id_usuario= '" + idUsuario + "' AND tbl_perfil_detalle.PK_id_aplicacion ='" + idAplicacion + "'", cn.conectar());
+                        almacena = sql.ExecuteReader();
+
+                        if (almacena.Read() == true)
+                        {
+                            if (almacena.GetString(0) == "1")
+                            {
+                                almacena.Close();
+                                sql.Connection.Close();
+                                return true;
+                            }
+                        }
+
+                        break;
+
+                    case 2:
+
+                         sql = new OdbcCommand("Select consultar from tbl_usuario_aplicacion WHERE PK_id_usuario= '" + idUsuario + "' AND PK_id_aplicacion ='" + idAplicacion + "'", cn.conectar());
+                         almacena = sql.ExecuteReader();
+
+                        if (almacena.Read() == true)
+                        {
+                            if (almacena.GetString(0) == "1")
+                            {
+                                almacena.Close();
+                                sql.Connection.Close();
+                                return true;
+                            }
+                        }
+
+                        sql = new OdbcCommand("Select tbl_perfil_detalle.consultar from tbl_perfil_detalle " +
+                            "INNER JOIN tbl_usuario_perfil ON tbl_perfil_detalle.PK_id_perfil = tbl_usuario_perfil.PK_id_perfil" +
+                            " WHERE tbl_usuario_perfil.PK_id_usuario= '" + idUsuario + "' AND tbl_perfil_detalle.PK_id_aplicacion ='" + idAplicacion + "'", cn.conectar());
+                        almacena = sql.ExecuteReader();
+
+                        if (almacena.Read() == true)
+                        {
+                            if (almacena.GetString(0) == "1")
+                            {
+                                almacena.Close();
+                                sql.Connection.Close();
+                                return true;
+                            }
+                        }
+
+                        break;
+
+                    case 3:
+
+                        sql = new OdbcCommand("Select modificar from tbl_usuario_aplicacion WHERE PK_id_usuario= '" + idUsuario + "' AND PK_id_aplicacion ='" + idAplicacion + "'", cn.conectar());
+                        almacena = sql.ExecuteReader();
+
+                        if (almacena.Read() == true)
+                        {
+                            if (almacena.GetString(0) == "1")
+                            {
+                                almacena.Close();
+                                sql.Connection.Close();
+                                return true;
+                            }
+                        }
+
+                        sql = new OdbcCommand("Select tbl_perfil_detalle.modificar from tbl_perfil_detalle " +
+                            "INNER JOIN tbl_usuario_perfil ON tbl_perfil_detalle.PK_id_perfil = tbl_usuario_perfil.PK_id_perfil" +
+                            " WHERE tbl_usuario_perfil.PK_id_usuario= '" + idUsuario + "' AND tbl_perfil_detalle.PK_id_aplicacion ='" + idAplicacion + "'", cn.conectar());
+                        almacena = sql.ExecuteReader();
+
+                        if (almacena.Read() == true)
+                        {
+                            if (almacena.GetString(0) == "1")
+                            {
+                                almacena.Close();
+                                sql.Connection.Close();
+                                return true;
+                            }
+                        }
+
+                        break;
+
+                    case 4:
+
+                        sql = new OdbcCommand("Select eliminar from tbl_usuario_aplicacion WHERE PK_id_usuario= '" + idUsuario + "' AND PK_id_aplicacion ='" + idAplicacion + "'", cn.conectar());
+                        almacena = sql.ExecuteReader();
+
+                        if (almacena.Read() == true)
+                        {
+                            if (almacena.GetString(0) == "1")
+                            {
+                                almacena.Close();
+                                sql.Connection.Close();
+                                return true;
+                            }
+                        }
+
+                        sql = new OdbcCommand("Select tbl_perfil_detalle.eliminar from tbl_perfil_detalle " +
+                            "INNER JOIN tbl_usuario_perfil ON tbl_perfil_detalle.PK_id_perfil = tbl_usuario_perfil.PK_id_perfil" +
+                            " WHERE tbl_usuario_perfil.PK_id_usuario= '" + idUsuario + "' AND tbl_perfil_detalle.PK_id_aplicacion ='" + idAplicacion + "'", cn.conectar());
+                        almacena = sql.ExecuteReader();
+
+                        if (almacena.Read() == true)
+                        {
+                            if (almacena.GetString(0) == "1")
+                            {
+                                almacena.Close();
+                                sql.Connection.Close();
+                                return true;
+                            }
+                        }
+
+                        break;
+
+                    case 5:
+
+                        sql = new OdbcCommand("Select imprimir from tbl_usuario_aplicacion WHERE PK_id_usuario= '" + idUsuario + "' AND PK_id_aplicacion ='" + idAplicacion + "'", cn.conectar());
+                        almacena = sql.ExecuteReader();
+
+                        if (almacena.Read() == true)
+                        {
+                            if (almacena.GetString(0) == "1")
+                            {
+                                almacena.Close();
+                                sql.Connection.Close();
+                                return true;
+                            }
+                        }
+
+                        sql = new OdbcCommand("Select tbl_perfil_detalle.imprimir from tbl_perfil_detalle " +
+                            "INNER JOIN tbl_usuario_perfil ON tbl_perfil_detalle.PK_id_perfil = tbl_usuario_perfil.PK_id_perfil" +
+                            " WHERE tbl_usuario_perfil.PK_id_usuario= '" + idUsuario + "' AND tbl_perfil_detalle.PK_id_aplicacion ='" + idAplicacion + "'", cn.conectar());
+                        almacena = sql.ExecuteReader();
+
+                        if (almacena.Read() == true)
+                        {
+                            if (almacena.GetString(0) == "1")
+                            {
+                                almacena.Close();
+                                sql.Connection.Close();
+                                return true;
+                            }
+                        }
+
+                        break;
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+
+            return false;
+        }
 
     }
 }

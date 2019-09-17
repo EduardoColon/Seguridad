@@ -77,12 +77,6 @@
     <Compile Include="frm_cambioclave.Designer.cs">
       <DependentUpon>frm_cambioclave.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_cambioclavecliente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_cambioclavecliente.Designer.cs">
-      <DependentUpon>frm_cambioclavecliente.cs</DependentUpon>
-    </Compile>
     <Compile Include="frm_login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,9 +151,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_cambioclave.resx">
       <DependentUpon>frm_cambioclave.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_cambioclavecliente.resx">
-      <DependentUpon>frm_cambioclavecliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_login.resx">
       <DependentUpon>frm_login.cs</DependentUpon>
