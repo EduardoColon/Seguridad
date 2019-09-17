@@ -237,6 +237,26 @@ namespace CapaDatos
             return dataconsulta;
         }
 
+        public OdbcDataAdapter update(string usuario)
+        {
+            cn.conectar();
+            string sqlconsulta = "select PK_id_perfil FROM tbl_usuario_perfil where PK_id_usuario = '"+usuario+"'";
+            OdbcDataAdapter dataconsulta = new OdbcDataAdapter(sqlconsulta, cn.conectar());
+            return dataconsulta;
+           
+        }
+
+
+        public OdbcDataAdapter clienteupdate(string clave,string usuario)
+        {
+            cn.conectar();
+            MessageBox.Show("Contraseña Actualizada");
+            string sqlconsulta = "UPDATE tbl_usuario set password_usuario='" + clave + "' where PK_id_usuario='" + usuario + "'";
+            OdbcDataAdapter dataconsulta = new OdbcDataAdapter(sqlconsulta, cn.conectar());
+            return dataconsulta;
+        }
+
+
         public OdbcDataAdapter insertaraplicacion(string idaplicacion, string modulo, string descripcion, string aplicacion, int boton)
         {
             cn.conectar();

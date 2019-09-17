@@ -48,9 +48,17 @@
             this.btn_guardar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.btn_ayuda = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_claves = new System.Windows.Forms.TextBox();
+            this.btn_salir1 = new System.Windows.Forms.Button();
+            this.btn_guardar1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_salir
@@ -233,11 +241,11 @@
             this.groupBox3.Controls.Add(this.txt_idbuscar);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.button1);
-            this.groupBox3.Location = new System.Drawing.Point(51, 72);
+            this.groupBox3.Location = new System.Drawing.Point(81, 70);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(601, 107);
+            this.groupBox3.Size = new System.Drawing.Size(601, 101);
             this.groupBox3.TabIndex = 253;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Modificar";
@@ -276,11 +284,93 @@
             this.btn_ayuda.UseVisualStyleBackColor = true;
             this.btn_ayuda.Click += new System.EventHandler(this.Btn_ayuda_Click);
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.label5);
+            this.groupBox4.Controls.Add(this.label8);
+            this.groupBox4.Controls.Add(this.textBox1);
+            this.groupBox4.Controls.Add(this.txt_claves);
+            this.groupBox4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(211, 204);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox4.Size = new System.Drawing.Size(405, 135);
+            this.groupBox4.TabIndex = 260;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Datos Usuario";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(6, 42);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(135, 17);
+            this.label5.TabIndex = 193;
+            this.label5.Text = " Nueva Contraseña";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(8, 88);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(133, 17);
+            this.label8.TabIndex = 205;
+            this.label8.Text = "Repetir Contraseña";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(147, 36);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.PasswordChar = '*';
+            this.textBox1.Size = new System.Drawing.Size(236, 23);
+            this.textBox1.TabIndex = 227;
+            // 
+            // txt_claves
+            // 
+            this.txt_claves.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_claves.Location = new System.Drawing.Point(147, 85);
+            this.txt_claves.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_claves.Name = "txt_claves";
+            this.txt_claves.Size = new System.Drawing.Size(238, 23);
+            this.txt_claves.TabIndex = 226;
+            // 
+            // btn_salir1
+            // 
+            this.btn_salir1.Location = new System.Drawing.Point(439, 418);
+            this.btn_salir1.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_salir1.Name = "btn_salir1";
+            this.btn_salir1.Size = new System.Drawing.Size(107, 33);
+            this.btn_salir1.TabIndex = 260;
+            this.btn_salir1.Text = "Salir";
+            this.btn_salir1.UseVisualStyleBackColor = true;
+            this.btn_salir1.Click += new System.EventHandler(this.Btn_salir1_Click);
+            // 
+            // btn_guardar1
+            // 
+            this.btn_guardar1.Location = new System.Drawing.Point(261, 418);
+            this.btn_guardar1.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_guardar1.Name = "btn_guardar1";
+            this.btn_guardar1.Size = new System.Drawing.Size(98, 33);
+            this.btn_guardar1.TabIndex = 259;
+            this.btn_guardar1.Text = "Guardar";
+            this.btn_guardar1.UseVisualStyleBackColor = true;
+            this.btn_guardar1.Click += new System.EventHandler(this.Btn_guardar1_Click);
+            // 
             // frm_cambioclave
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(838, 514);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.btn_salir1);
+            this.Controls.Add(this.btn_guardar1);
             this.Controls.Add(this.btn_ayuda);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.groupBox3);
@@ -300,6 +390,8 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -326,5 +418,12 @@
         private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btn_ayuda;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_claves;
+        private System.Windows.Forms.Button btn_salir1;
+        private System.Windows.Forms.Button btn_guardar1;
     }
 }
