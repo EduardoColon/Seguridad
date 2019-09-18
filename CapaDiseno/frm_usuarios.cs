@@ -194,7 +194,7 @@ namespace CapaDiseno
             button3.Enabled = false;
             button2.Enabled = false;
             button4.Enabled = false;
-
+            Rdb_activo.Checked = true;
 
            
         }
