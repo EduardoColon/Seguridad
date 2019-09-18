@@ -261,42 +261,51 @@ namespace CapaDiseno
             
             int boton;
 
-            if (boton_ingreso == true)
+            if(txt_aplicacion.Text == "" || Cbx_modulo.Text == "" || txt_descripcion.Text=="" || txt_aplicacion.Text=="")
             {
-                boton = 1;
+                MessageBox.Show("Faltan Campos Por Llenar");
             }
             else
             {
-                boton = 0;
+                if (boton_ingreso == true)
+                {
+                    boton = 1;
+                }
+                else
+                {
+                    boton = 0;
+                }
+
+                try
+                {
+                    DataTable dtusuario = logica1.aplicaciones(idaplicacion, modulo, descripcion, aplicacion, boton);
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine(ex);
+                    return;
+                }
+                txt_buscar.Enabled = true;
+                button1.Enabled = true;
+                button2.Enabled = true;
+                button3.Enabled = true;
+                button4.Enabled = true;
+                txt_idaplicacion.Enabled = false;
+                Cbx_modulo.Enabled = false;
+                txt_descripcion.Enabled = false;
+                txt_idaplicacion.Enabled = false;
+                Gpb_estado.Enabled = false;
+                txt_aplicacion.Enabled = false;
+                btn_guardar.Enabled = true;
+                boton_eliminar = true;
+                btn_guardar.Enabled = false;
+                txt_buscar.Enabled = false;
+                txt_idaplicacion.Text = "";
+                limpiar();
             }
 
-            try
-            {
-                DataTable dtusuario = logica1.aplicaciones(idaplicacion, modulo, descripcion, aplicacion, boton);
-            }
-            catch (Exception ex)
-            {
-
-                Console.WriteLine(ex);
-                return;
-            }
-            txt_buscar.Enabled = true;
-            button1.Enabled = true;
-            button2.Enabled = true;
-            button3.Enabled = true;
-            button4.Enabled = true;
-            txt_idaplicacion.Enabled = false;
-            Cbx_modulo.Enabled = false;
-            txt_descripcion.Enabled = false;
-            txt_idaplicacion.Enabled = false;
-            Gpb_estado.Enabled = false;
-            txt_aplicacion.Enabled = false;
-            btn_guardar.Enabled = true;
-            boton_eliminar = true;
-            btn_guardar.Enabled = false;
-            txt_buscar.Enabled = false;
-            txt_idaplicacion.Text = "";
-            limpiar();
+            
         }
     }
 }

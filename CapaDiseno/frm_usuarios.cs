@@ -16,6 +16,7 @@ namespace CapaDiseno
     public partial class frm_usuarios : Form
     {
         logica logica1;
+        
         bool boton_ingreso = false;
         bool boton_eliminar = false;
         bool boton_modificar = false;
@@ -205,6 +206,16 @@ namespace CapaDiseno
             Help.ShowHelp(this, "C:\\Ayuda_Seguridad\\" + "CreacionUsuario.chm", "Creacion_Usuario.html");
         }
 
+        private void txt_id_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_id_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.CampoAlfanumerico(e);
+        }
+
         private void Button4_Click(object sender, EventArgs e)
         {
             
@@ -231,67 +242,80 @@ namespace CapaDiseno
 
             int boton;
 
-            if (boton_ingreso == true)
+            if (txt_id.Text == " " || txt_nombre.Text == "" || txt_apellido.Text == "" || txt_clave.Text == "")
             {
-                boton = 1;
-
-                try
+                MessageBox.Show("Faltan Campos Por Llenar", "Verificación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if(clave.Length<8)
+            {
+                MessageBox.Show("La contraseña debe de contener 8 caracteres como minimo","Verificación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                if (boton_ingreso == true)
                 {
-                    DataTable dtusuario = logica1.usuarios(id, nombre, apellido, clave, boton);
-                    MessageBox.Show("Usuario Creado");
+                    boton = 1;
 
+                    try
+                    {
+                        DataTable dtusuario = logica1.usuarios(id, nombre, apellido, clave, boton);
+                        MessageBox.Show("Usuario Creado");
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        Console.WriteLine(ex);
+                        return;
+                    }
                 }
-                catch (Exception ex)
+
+                else if (boton_modificar == true)
                 {
 
-                    Console.WriteLine(ex);
-                    return;
+                    string estado = "";
+                    if (Rdb_activo.Checked)
+                    {
+                        estado = "1";
+
+
+                    }
+
+                    if (Rdb_inactivo.Checked)
+                    {
+                        estado = "0";
+                    }
+
+                    try
+                    {
+
+                        DataTable dtUsuarioActualizar = logica1.ActualizarUsuario(id, nombre, apellido, clave, estado);
+                        MessageBox.Show("Usuario Actualizado");
+                    }
+                    catch (Exception ex)
+                    {
+
+                        Console.WriteLine(ex);
+                        return;
+                    }
                 }
+
+
+
+                limpiar();
+                txt_clave.Enabled = true;
+                txt_id.Enabled = true;
+                txt_apellido.Enabled = true;
+                txt_nombre.Enabled = true;
+                Gpb_estado.Enabled = true;
+                txt_buscar.Enabled = true;
+                button1.Enabled = true;
+                button2.Enabled = true;
+                button3.Enabled = true;
+                button4.Enabled = true;
             }
 
-            else if(boton_modificar == true)
-            {
-
-                string estado = "";
-                if (Rdb_activo.Checked)
-                {
-                    estado = "1";
-
-
-                }
-
-                if (Rdb_inactivo.Checked)
-                {
-                    estado = "0";
-                }
-
-                try
-                {
-                   
-                    DataTable dtUsuarioActualizar = logica1.ActualizarUsuario(id, nombre, apellido,clave, estado);
-                    MessageBox.Show("Usuario Actualizado");
-                }
-                catch (Exception ex)
-                {
-
-                    Console.WriteLine(ex);
-                    return;
-                }
-            }
-
-           
-
-            limpiar();
-            txt_clave.Enabled = true;
-            txt_id.Enabled = true;
-            txt_apellido.Enabled = true;
-            txt_nombre.Enabled = true;
-            Gpb_estado.Enabled = true;
-            txt_buscar.Enabled = true;
-            button1.Enabled = true;
-            button2.Enabled = true;
-            button3.Enabled = true;
-            button4.Enabled = true;
+            
         }
 
         private void Btn_salir_Click(object sender, EventArgs e)

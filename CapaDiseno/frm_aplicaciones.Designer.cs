@@ -62,6 +62,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(79, 35);
             this.button4.TabIndex = 250;
+            this.button4.Tag = "5";
             this.button4.Text = "Nuevo";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.Button4_Click);
@@ -73,6 +74,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(79, 35);
             this.button3.TabIndex = 249;
+            this.button3.Tag = "6";
             this.button3.Text = "Modificar";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
@@ -93,21 +95,22 @@
             // 
             // txt_buscar
             // 
-            this.txt_buscar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_buscar.Location = new System.Drawing.Point(208, 35);
             this.txt_buscar.Margin = new System.Windows.Forms.Padding(4);
             this.txt_buscar.Name = "txt_buscar";
-            this.txt_buscar.Size = new System.Drawing.Size(283, 23);
+            this.txt_buscar.Size = new System.Drawing.Size(283, 30);
             this.txt_buscar.TabIndex = 240;
+            this.txt_buscar.Tag = "9";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(69, 35);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 17);
+            this.label2.Size = new System.Drawing.Size(94, 25);
             this.label2.TabIndex = 238;
             this.label2.Text = "Buscar Id";
             // 
@@ -118,6 +121,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(79, 35);
             this.button1.TabIndex = 237;
+            this.button1.Tag = "10";
             this.button1.Text = "Buscar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
@@ -129,6 +133,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(79, 35);
             this.button2.TabIndex = 247;
+            this.button2.Tag = "7";
             this.button2.Text = "Eliminar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
@@ -136,41 +141,43 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(20, 135);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(138, 17);
+            this.label4.Size = new System.Drawing.Size(181, 25);
             this.label4.TabIndex = 205;
             this.label4.Text = " Nombre Aplicacion";
             this.label4.Click += new System.EventHandler(this.Label4_Click);
             // 
             // txt_aplicacion
             // 
-            this.txt_aplicacion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_aplicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_aplicacion.Location = new System.Drawing.Point(249, 132);
             this.txt_aplicacion.Margin = new System.Windows.Forms.Padding(4);
             this.txt_aplicacion.Name = "txt_aplicacion";
-            this.txt_aplicacion.Size = new System.Drawing.Size(285, 23);
+            this.txt_aplicacion.Size = new System.Drawing.Size(285, 30);
             this.txt_aplicacion.TabIndex = 226;
+            this.txt_aplicacion.Tag = "2";
             // 
             // txt_descripcion
             // 
-            this.txt_descripcion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_descripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_descripcion.Location = new System.Drawing.Point(249, 182);
             this.txt_descripcion.Margin = new System.Windows.Forms.Padding(4);
             this.txt_descripcion.Name = "txt_descripcion";
-            this.txt_descripcion.Size = new System.Drawing.Size(285, 23);
+            this.txt_descripcion.Size = new System.Drawing.Size(285, 30);
             this.txt_descripcion.TabIndex = 227;
+            this.txt_descripcion.Tag = "3";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(25, 185);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(83, 17);
+            this.label7.Size = new System.Drawing.Size(114, 25);
             this.label7.TabIndex = 193;
             this.label7.Text = "Descripcion";
             // 
@@ -184,7 +191,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txt_idaplicacion);
             this.groupBox1.Controls.Add(this.txt_descripcion);
-            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(58, 156);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
@@ -201,38 +208,39 @@
             this.Cbx_modulo.Location = new System.Drawing.Point(249, 87);
             this.Cbx_modulo.Margin = new System.Windows.Forms.Padding(4);
             this.Cbx_modulo.Name = "Cbx_modulo";
-            this.Cbx_modulo.Size = new System.Drawing.Size(285, 25);
+            this.Cbx_modulo.Size = new System.Drawing.Size(285, 33);
             this.Cbx_modulo.TabIndex = 228;
+            this.Cbx_modulo.Tag = "1";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(25, 90);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 17);
+            this.label3.Size = new System.Drawing.Size(101, 25);
             this.label3.TabIndex = 193;
             this.label3.Text = "ID Modulo";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(25, 54);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 17);
+            this.label1.Size = new System.Drawing.Size(126, 25);
             this.label1.TabIndex = 205;
             this.label1.Text = "ID Aplicacion";
             // 
             // txt_idaplicacion
             // 
-            this.txt_idaplicacion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_idaplicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_idaplicacion.Location = new System.Drawing.Point(249, 54);
             this.txt_idaplicacion.Margin = new System.Windows.Forms.Padding(4);
             this.txt_idaplicacion.Name = "txt_idaplicacion";
-            this.txt_idaplicacion.Size = new System.Drawing.Size(285, 23);
+            this.txt_idaplicacion.Size = new System.Drawing.Size(285, 30);
             this.txt_idaplicacion.TabIndex = 226;
             // 
             // btn_salir
@@ -242,6 +250,7 @@
             this.btn_salir.Name = "btn_salir";
             this.btn_salir.Size = new System.Drawing.Size(79, 35);
             this.btn_salir.TabIndex = 244;
+            this.btn_salir.Tag = "8";
             this.btn_salir.Text = "Salir";
             this.btn_salir.UseVisualStyleBackColor = true;
             this.btn_salir.Click += new System.EventHandler(this.Btn_salir_Click);
@@ -253,6 +262,7 @@
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(79, 35);
             this.btn_guardar.TabIndex = 243;
+            this.btn_guardar.Tag = "4";
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.UseVisualStyleBackColor = true;
             this.btn_guardar.Click += new System.EventHandler(this.Btn_guardar_Click);
@@ -262,7 +272,7 @@
             this.Gpb_estado.AccessibleDescription = "Estado";
             this.Gpb_estado.Controls.Add(this.Rdb_inactivo);
             this.Gpb_estado.Controls.Add(this.Rdb_activo);
-            this.Gpb_estado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Gpb_estado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Gpb_estado.Location = new System.Drawing.Point(83, 417);
             this.Gpb_estado.Margin = new System.Windows.Forms.Padding(4);
             this.Gpb_estado.Name = "Gpb_estado";
@@ -278,7 +288,7 @@
             this.Rdb_inactivo.Location = new System.Drawing.Point(342, 36);
             this.Rdb_inactivo.Margin = new System.Windows.Forms.Padding(4);
             this.Rdb_inactivo.Name = "Rdb_inactivo";
-            this.Rdb_inactivo.Size = new System.Drawing.Size(79, 21);
+            this.Rdb_inactivo.Size = new System.Drawing.Size(104, 29);
             this.Rdb_inactivo.TabIndex = 1;
             this.Rdb_inactivo.TabStop = true;
             this.Rdb_inactivo.Text = "Inactivo";
@@ -290,7 +300,7 @@
             this.Rdb_activo.Location = new System.Drawing.Point(134, 36);
             this.Rdb_activo.Margin = new System.Windows.Forms.Padding(4);
             this.Rdb_activo.Name = "Rdb_activo";
-            this.Rdb_activo.Size = new System.Drawing.Size(68, 21);
+            this.Rdb_activo.Size = new System.Drawing.Size(91, 29);
             this.Rdb_activo.TabIndex = 0;
             this.Rdb_activo.TabStop = true;
             this.Rdb_activo.Text = "Activo";
@@ -311,7 +321,7 @@
             // 
             // frm_aplicaciones
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(838, 514);
             this.Controls.Add(this.btn_ayuda);
@@ -323,7 +333,7 @@
             this.Controls.Add(this.btn_salir);
             this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.Gpb_estado);
-            this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm_aplicaciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -109,10 +109,15 @@ namespace CapaDiseno
             if (txtnombre.Text == "")
             {
                 MessageBox.Show("Falta Nombre de Perfil");
+
+                btn_nuevo.Enabled = true;
+              
             }
             else if (txtdesc.Text == "")
             {
                 MessageBox.Show("Falta Descripcion del Perfil");
+                btn_nuevo.Enabled = true;
+              
             }
 
             else
@@ -174,10 +179,14 @@ namespace CapaDiseno
             if (txtnombre.Text == "")
             {
                 MessageBox.Show("Falta Nombre de Perfil");
+                btn_nuevo.Enabled = true;
+       
             }
             else if (txtdesc.Text == "")
             {
                 MessageBox.Show("Falta Descripcion del Perfil");
+                btn_nuevo.Enabled = true;
+              
             }
 
             else

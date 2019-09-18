@@ -52,17 +52,24 @@ namespace CapaDiseno
             txtnombre.Enabled = false;
             txtdesc.Enabled = false;
 
-          
-
+       
             if (txtnombre.Text == "")
             {
                 MessageBox.Show("Falta Nombre de Modulo");
+                btn_nuevo.Enabled = true;
+                txtnombre.Enabled = false;
+                txtdesc.Enabled = false;
+
             }
             else if (txtdesc.Text == "")
             {
                 MessageBox.Show("Falta Descripcion del modulo");
+                btn_nuevo.Enabled = true;
+                txtnombre.Enabled = false;
+                txtdesc.Enabled = false;
+
             }
-           
+
             else
             {
                 string estado = "";
@@ -184,10 +191,21 @@ namespace CapaDiseno
             if (txtnombre.Text == "")
             {
                 MessageBox.Show("Falta Nombre de Modulo");
+
+                btn_nuevo.Enabled = true;
+                txtnombre.Enabled = false;
+                txtdesc.Enabled = false;
+
+
             }
             else if (txtdesc.Text == "")
             {
                 MessageBox.Show("Falta Descripcion del modulo");
+
+                btn_nuevo.Enabled = true;
+                txtnombre.Enabled = false;
+                txtdesc.Enabled = false;
+
             }
 
             else

@@ -147,8 +147,8 @@ namespace CapaDiseno
             txt_nombres.Text = "";
             txt_id.Text = "";
             txt_clave.Text = "";
-            txt_claves.Text = "";
-            textBox1.Text = "";
+            txt_nueva_clave_repetida.Text = "";
+            txt_nueva_clave.Text = "";
         }
 
 
@@ -163,35 +163,36 @@ namespace CapaDiseno
         private void Btn_guardar1_Click(object sender, EventArgs e)
         {
 
-            contra = textBox1.Text;
-            clave1 = textBox1.Text;
-            clave2 = txt_claves.Text;
+            contra = txt_nueva_clave.Text.Trim();
+            clave1 = txt_nueva_clave.Text.Trim();
+            clave2 = txt_nueva_clave_repetida.Text.Trim();
 
-         
-            if (clave1.Equals(clave2))
+            if(clave1.Length< 8 || clave2.Length < 8)
             {
-                try
-                {
-                    DataTable dtusuario = logica1.updatecliente(contra, usuario);
-                }
-                catch (Exception ex)
-                {
-
-                    Console.WriteLine(ex);
-                    return;
-                }
-                limpiar();
+                MessageBox.Show("La clave debe ser de al menos 8 caracteres", "Verificación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
-                MessageBox.Show("Las Contraseñas no Coinciden");
+                if (clave1.Equals(clave2))
+                {
+                    try
+                    {
+                        DataTable dtusuario = logica1.updatecliente(contra, usuario);
+                    }
+                    catch (Exception ex)
+                    {
+
+                        Console.WriteLine(ex);
+                        return;
+                    }
+                    limpiar();
+                }
+                else
+                {
+                    MessageBox.Show("Las Contraseñas no Coinciden");
+                }
+
             }
-
-
-
-
-
-
 
 
         }
@@ -218,22 +219,31 @@ namespace CapaDiseno
 
         private void Btn_guardar_Click(object sender, EventArgs e)
         {
-            id = txt_id.Text;
-            nombre = txt_nombres.Text;
-            apellido = txt_apellidos.Text;
-            clave = txt_clave.Text;
+            id = txt_id.Text.Trim();
+            nombre = txt_nombres.Text.Trim();
+            apellido = txt_apellidos.Text.Trim();
+            clave = txt_clave.Text.Trim();
            
-            try
+            if(clave.Length < 8)
             {
-                DataTable dtusuario = logica1.clave(id, nombre, apellido, clave);
+                MessageBox.Show("La clave debe ser de al menos 8 caracteres", "Verificación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            catch (Exception ex)
+            else
             {
+                try
+                {
+                    DataTable dtusuario = logica1.clave(id, nombre, apellido, clave);
+                }
+                catch (Exception ex)
+                {
 
-                Console.WriteLine(ex);
-                return;
+                    Console.WriteLine(ex);
+                    return;
+                }
+                limpiar();
             }
-            limpiar();
+
+            
         }
     }
 }
