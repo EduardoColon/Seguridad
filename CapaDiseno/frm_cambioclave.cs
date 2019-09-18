@@ -106,10 +106,12 @@ namespace CapaDiseno
                     groupBox2.Visible = true;
                     groupBox1.Visible = true;
                     btn_guardar.Visible = true;
+                    btn_ayuda.Visible = true;
 
                     groupBox4.Visible = false;
                     btn_guardar1.Visible = false;
                     btn_salir1.Visible = false;
+                    button2.Visible = false;
 
                 }
                 else
@@ -119,10 +121,13 @@ namespace CapaDiseno
                     groupBox1.Visible = false;
                     btn_guardar.Visible = false;
                     btn_salir.Visible = false;
+                    btn_ayuda.Visible = false;
+
 
                     groupBox4.Visible = true;
                     btn_guardar1.Visible = true;
                     btn_salir1.Visible = true;
+                    button2.Visible = true;
                 }
             }
             catch (Exception ex)
@@ -154,27 +159,51 @@ namespace CapaDiseno
 
         }
 
-        public string contra;
+        public string contra,clave1,clave2;
         private void Btn_guardar1_Click(object sender, EventArgs e)
         {
+
             contra = textBox1.Text;
+            clave1 = textBox1.Text;
+            clave2 = txt_claves.Text;
 
-            try
+         
+            if (clave1.Equals(clave2))
             {
-                DataTable dtusuario = logica1.updatecliente(contra,usuario);
-            }
-            catch (Exception ex)
-            {
+                try
+                {
+                    DataTable dtusuario = logica1.updatecliente(contra, usuario);
+                }
+                catch (Exception ex)
+                {
 
-                Console.WriteLine(ex);
-                return;
+                    Console.WriteLine(ex);
+                    return;
+                }
+                limpiar();
             }
-            limpiar();
+            else
+            {
+                MessageBox.Show("Las Contraseñas no Coinciden");
+            }
+
+
+
+
+
+
+
+
         }
 
         private void Btn_salir1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Txt_claves_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void Btn_ayuda_Click(object sender, EventArgs e)
