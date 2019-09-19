@@ -181,6 +181,77 @@ namespace CapaLogica
 
 
         }
+        public DataTable consultaLogicaPermisosAplicaciones(string idUsuario, string nombreAplicacion)
+        {
+
+            try
+            {
+                OdbcDataAdapter dtPermisos = sn.buscarPermisosUA(idUsuario, nombreAplicacion);
+                DataTable tablePermisosAplicaciones = new DataTable();
+                dtPermisos.Fill(tablePermisosAplicaciones);
+                return tablePermisosAplicaciones;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+
+        }
+
+        public DataTable consultaLogicaPermisosPerfiles(string nombrePerfil, string nombreAplicacion)
+        {
+
+            try
+            {
+                OdbcDataAdapter dtPermisos = sn.buscarPermisosPA(nombrePerfil, nombreAplicacion);
+                DataTable tablePermisosAplicaciones = new DataTable();
+                dtPermisos.Fill(tablePermisosAplicaciones);
+                return tablePermisosAplicaciones;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+
+        }
+
+
+        public DataTable consultaLogicaModificarPermisosAplicaciones(string codigoUsuario, string nombreAplicacion, string ingresar, string consulta, string modificar, string eliminar, string imprimir)
+        {
+            try
+            {
+                OdbcDataAdapter dtPermisosUA = sn.modificarPermisosUA(codigoUsuario, nombreAplicacion, ingresar, consulta, modificar, eliminar, imprimir);
+                DataTable tablePermisosUA = new DataTable();
+                dtPermisosUA.Fill(tablePermisosUA);
+                return tablePermisosUA;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public DataTable consultaLogicaModificarPermisosPerfiles(string codigoPerfil, string nombreAplicacion, string ingresar, string consulta, string modificar, string eliminar, string imprimir)
+        {
+            try
+            {
+                OdbcDataAdapter dtPermisosPA = sn.modificarPermisosPA(codigoPerfil, nombreAplicacion, ingresar, consulta, modificar, eliminar, imprimir);
+                DataTable tablePermisosPA = new DataTable();
+                dtPermisosPA.Fill(tablePermisosPA);
+                return tablePermisosPA;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+
+
 
         /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 

@@ -323,5 +323,25 @@ namespace CapaDiseno
             mostrar_Bitacora.Show();
 
         }
+
+        private void ModificarPermisosDeAplicacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+          
+          
+        }
+
+        private void ModificarPermisosDeAplicacionesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frm_modificarPermisosAplicaciones modificarPermisos_Aplicaciones = new frm_modificarPermisosAplicaciones(idUsuario);
+            modificarPermisos_Aplicaciones.MdiParent = this;
+            modificarPermisos_Aplicaciones.Show();
+        }
+
+        private void ModificarPermisosDePerfilesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_modificarPermisosPerfiles modificarPermisos_Aplicaciones = new frm_modificarPermisosPerfiles(idUsuario);
+            modificarPermisos_Aplicaciones.MdiParent = this;
+            modificarPermisos_Aplicaciones.Show();
+        }
     }
 }

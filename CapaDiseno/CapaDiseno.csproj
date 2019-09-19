@@ -89,6 +89,18 @@
     <Compile Include="frm_loginAlterno.Designer.cs">
       <DependentUpon>frm_loginAlterno.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_modificarPermisosAplicaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_modificarPermisosAplicaciones.Designer.cs">
+      <DependentUpon>frm_modificarPermisosAplicaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_modificarPermisosPerfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_modificarPermisosPerfiles.Designer.cs">
+      <DependentUpon>frm_modificarPermisosPerfiles.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_modulos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +169,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_loginAlterno.resx">
       <DependentUpon>frm_loginAlterno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_modificarPermisosAplicaciones.resx">
+      <DependentUpon>frm_modificarPermisosAplicaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_modificarPermisosPerfiles.resx">
+      <DependentUpon>frm_modificarPermisosPerfiles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_modulos.resx">
       <DependentUpon>frm_modulos.cs</DependentUpon>

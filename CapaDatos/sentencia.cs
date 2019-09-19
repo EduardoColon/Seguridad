@@ -96,7 +96,7 @@ namespace CapaDatos
                     sCodigoAplicacion = almacena.GetString(0);
                 }
 
-                string sqlInsertarPermisosUA = "INSERT INTO tbl_usuario_aplicacion(PK_id_usuario, PK_id_aplicacion, ingresar, consulta, modificar, eliminar, imprimir) VALUES ('"+codigoUsuario+"', '"+sCodigoAplicacion+"', '"+ingresar+"', '"+consulta+"', '"+modificar+"', '"+eliminar+"', '"+imprimir+"');";
+                string sqlInsertarPermisosUA = "INSERT INTO tbl_usuario_aplicacion(PK_id_usuario, PK_id_aplicacion, ingresar, consultar, modificar, eliminar, imprimir) VALUES ('"+codigoUsuario+"', '"+sCodigoAplicacion+"', '"+ingresar+"', '"+consulta+"', '"+modificar+"', '"+eliminar+"', '"+imprimir+"');";
                 insertarBitacora(idUsuario, "Asigno aplicacion: " + nombreAplicacion+ " a usuario: "  + codigoUsuario, "tbl_usuario_aplicacion");
                 OdbcDataAdapter dataPermisosUA = new OdbcDataAdapter(sqlInsertarPermisosUA, cn.conectar());
 
@@ -209,6 +209,140 @@ namespace CapaDatos
                 Console.WriteLine(ex);
                 return null;
             }
+        }
+
+        public OdbcDataAdapter buscarPermisosUA(string scodigoUsuario, string nombreAplicacion)
+        {
+            string sCodigoAplicacion = " ";
+            try
+            {
+
+                OdbcCommand sqlCodigoModulo = new OdbcCommand("SELECT PK_id_aplicacion FROM tbl_aplicacion WHERE nombre_aplicacion = '" + nombreAplicacion + "' ", cn.conectar());
+                OdbcDataReader almacena = sqlCodigoModulo.ExecuteReader();
+
+                while (almacena.Read() == true)
+                {
+                    sCodigoAplicacion = almacena.GetString(0);
+                }
+
+                string sqlConsultaPermisos = "SELECT ingresar, consultar, modificar, eliminar, imprimir FROM tbl_usuario_aplicacion WHERE PK_id_usuario = '"+scodigoUsuario+"' AND PK_id_Aplicacion = '"+sCodigoAplicacion+"'";
+                OdbcDataAdapter dataPermisos = new OdbcDataAdapter(sqlConsultaPermisos, cn.conectar());
+                insertarBitacora(idUsuario, "Realizo una consulta a los permisos de aplicaciones", "tbl_usuario_aplicacion");
+                return dataPermisos;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public OdbcDataAdapter buscarPermisosPA(string sNombrePerfil, string nombreAplicacion)
+        {
+            string sCodigoAplicacion = " ";
+            string scodigoPerfil = " ";
+            try
+            {
+
+                OdbcCommand sqlCodigoModulo = new OdbcCommand("SELECT PK_id_aplicacion FROM tbl_aplicacion WHERE nombre_aplicacion = '" + nombreAplicacion + "' ", cn.conectar());
+                OdbcDataReader almacena = sqlCodigoModulo.ExecuteReader();
+
+                while (almacena.Read() == true)
+                {
+                    sCodigoAplicacion = almacena.GetString(0);
+                }
+
+                OdbcCommand sqlCodigoPerfil = new OdbcCommand("SELECT PK_id_perfil FROM tbl_perfil_encabezado WHERE nombre_perfil = '" + sNombrePerfil + "' ", cn.conectar());
+                OdbcDataReader almacena1 = sqlCodigoPerfil.ExecuteReader();
+
+                while (almacena1.Read() == true)
+                {
+                    scodigoPerfil = almacena1.GetString(0);
+                }
+
+                string sqlConsultaPermisos = "SELECT ingresar, consultar, modificar, eliminar, imprimir FROM tbl_perfil_detalle WHERE PK_id_perfil = '" + scodigoPerfil + "' AND PK_id_aplicacion = '" + sCodigoAplicacion + "'";
+                OdbcDataAdapter dataPermisos = new OdbcDataAdapter(sqlConsultaPermisos, cn.conectar());
+                insertarBitacora(idUsuario, "Realizo una consulta a los permisos de aplicaciones", "tbl_usuario_aplicacion");
+                return dataPermisos;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public OdbcDataAdapter modificarPermisosUA(string codigoUsuario, string nombreAplicacion, string ingresar, string consulta, string modificar, string eliminar, string imprimir)
+        {
+            string sCodigoAplicacion = " ";
+
+            try
+            {
+                OdbcCommand sqlCodigoModulo = new OdbcCommand("SELECT PK_id_aplicacion FROM tbl_aplicacion WHERE nombre_aplicacion = '" + nombreAplicacion + "' ", cn.conectar());
+                OdbcDataReader almacena = sqlCodigoModulo.ExecuteReader();
+
+                while (almacena.Read() == true)
+                {
+                    sCodigoAplicacion = almacena.GetString(0);
+                }
+
+                string sqlModificarPermisosUA = "UPDATE tbl_usuario_aplicacion SET ingresar = '" + ingresar + "', consultar = '" + consulta+ "', modificar= '" + modificar + "', eliminar = '" + eliminar + "', imprimir = '" + imprimir + "' WHERE PK_id_usuario = '" + codigoUsuario + "' AND PK_id_aplicacion = '" + sCodigoAplicacion + "';";
+                insertarBitacora(idUsuario, "Modifico Permisos de la aplicacion: " + nombreAplicacion + " a usuario: " + codigoUsuario, "tbl_usuario_aplicacion");
+                OdbcDataAdapter dataPermisosUA = new OdbcDataAdapter(sqlModificarPermisosUA, cn.conectar());
+
+                almacena.Close();
+                sqlCodigoModulo.Connection.Close();
+
+                return dataPermisosUA;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+
+        }
+
+        public OdbcDataAdapter modificarPermisosPA(string nombrePerfil, string nombreAplicacion, string ingresar, string consulta, string modificar, string eliminar, string imprimir)
+        {
+            string sCodigoAplicacion = "";
+            string scodigoPerfil = "";
+
+            try
+            {
+                OdbcCommand sqlCodigoModulo = new OdbcCommand("SELECT PK_id_aplicacion FROM tbl_aplicacion WHERE nombre_aplicacion = '" + nombreAplicacion + "' ", cn.conectar());
+                OdbcDataReader almacena = sqlCodigoModulo.ExecuteReader();
+
+                while (almacena.Read() == true)
+                {
+                    sCodigoAplicacion = almacena.GetString(0);
+                }
+
+                OdbcCommand sqlCodigoPerfil = new OdbcCommand("SELECT PK_id_perfil FROM tbl_perfil_encabezado WHERE nombre_perfil = '" + nombrePerfil + "' ", cn.conectar());
+                OdbcDataReader almacena1 = sqlCodigoPerfil.ExecuteReader();
+
+                while (almacena1.Read() == true)
+                {
+                    scodigoPerfil = almacena1.GetString(0);
+                }
+
+                string sqlModificarPermisosUA = "UPDATE tbl_perfil_detalle SET ingresar = '" + ingresar + "', consultar = '" + consulta + "', modificar= '" + modificar + "', eliminar = '" + eliminar + "', imprimir = '" + imprimir + "' WHERE PK_id_perfil = '" + scodigoPerfil + "' AND PK_id_aplicacion = '" + sCodigoAplicacion + "';";
+                insertarBitacora(idUsuario, "Modifico Permisos de la aplicacion: " + nombreAplicacion + " a perfil: " + nombrePerfil, "tbl_perfil_detalle");
+                OdbcDataAdapter dataPermisosUA = new OdbcDataAdapter(sqlModificarPermisosUA, cn.conectar());
+
+                almacena.Close();
+                sqlCodigoModulo.Connection.Close();
+
+                return dataPermisosUA;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+
         }
 
 
