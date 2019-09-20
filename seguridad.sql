@@ -1,28 +1,9 @@
--- phpMyAdmin SQL Dump
--- version 4.8.5
--- https://www.phpmyadmin.net/
---
--- Servidor: 127.0.0.1
--- Tiempo de generación: 18-09-2019 a las 23:25:49
--- Versión del servidor: 10.1.38-MariaDB
--- Versión de PHP: 7.3.4
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
---
--- Base de datos: `moduloseguridad`
---
-CREATE DATABASE IF NOT EXISTS `moduloseguridad` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `moduloseguridad`;
+
+CREATE DATABASE IF NOT EXISTS `seguridad` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `seguridad`;
 
 DELIMITER $$
 --
@@ -44,7 +25,6 @@ CREATE TABLE `tbl_aplicacion` (
   `PK_id_modulo` int(11) NOT NULL,
   `nombre_aplicacion` varchar(45) DEFAULT NULL,
   `descripcion_aplicacion` varchar(200) DEFAULT NULL,
-  `no_reporteAsociado` int(11) DEFAULT NULL,
   `estado_aplicacion` tinyint(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -119,7 +99,6 @@ CREATE TABLE `tbl_usuario` (
   `apellido_usuarios` varchar(45) DEFAULT NULL,
   `password_usuario` varchar(45) DEFAULT NULL,
   `cambio_contrasena` tinyint(4) DEFAULT NULL,
-  `ultima_conexion` datetime DEFAULT NULL,
   `estado_usuario` tinyint(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -127,8 +106,8 @@ CREATE TABLE `tbl_usuario` (
 -- Volcado de datos para la tabla `tbl_usuario`
 --
 
-INSERT INTO `tbl_usuario` (`PK_id_usuario`, `nombre_usuario`, `apellido_usuarios`, `password_usuario`, `cambio_contrasena`, `ultima_conexion`, `estado_usuario`) VALUES
-('MiUsuario', 'Usuario', 'Prueba', 'e19d5cd5af0378da05f63f891c7467af', 0, NULL, 1);
+INSERT INTO `tbl_usuario` (`PK_id_usuario`, `nombre_usuario`, `apellido_usuarios`, `password_usuario`, `cambio_contrasena`,  `estado_usuario`) VALUES
+('MiUsuario', 'Usuario', 'Prueba', 'e19d5cd5af0378da05f63f891c7467af', 0, 1);
 
 --
 -- Disparadores `tbl_usuario`
@@ -156,7 +135,7 @@ CREATE TABLE `tbl_usuario_aplicacion` (
   `PK_id_usuario` varchar(25) NOT NULL,
   `PK_id_aplicacion` int(11) NOT NULL,
   `ingresar` tinyint(4) DEFAULT NULL,
-  `consulta` tinyint(4) DEFAULT NULL,
+  `consultar` tinyint(4) DEFAULT NULL,
   `modificar` tinyint(4) DEFAULT NULL,
   `eliminar` tinyint(4) DEFAULT NULL,
   `imprimir` tinyint(4) DEFAULT NULL
@@ -277,7 +256,3 @@ ALTER TABLE `tbl_usuario_perfil`
   ADD CONSTRAINT `fk_Usuario_perfil_Perfil1` FOREIGN KEY (`PK_id_perfil`) REFERENCES `tbl_perfil_encabezado` (`PK_id_perfil`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Usuario_perfil_Usuario1` FOREIGN KEY (`PK_id_usuario`) REFERENCES `tbl_usuario` (`PK_id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
